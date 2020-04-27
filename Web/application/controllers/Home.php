@@ -16,9 +16,9 @@ class Home extends CI_Controller {
 		$this->load->view('vhome');
     }
     
-    public function tables()
+    public function barang()
     {
-        $this->load->view('vtables');
+        redirect(site_url("Produk"));
 	}
 
 	public function charts()
