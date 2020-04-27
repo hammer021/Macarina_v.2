@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(<?php echo base_url("alogin/images/backgroundlogin.jpg")?>);">
+				<div class="login100-form-title" style="background-image: url(<?php echo base_url("alogin/images/bglogadmin.jpg")?>);">
 					<span class="login100-form-title-1">
 						Sign In
 					</span>

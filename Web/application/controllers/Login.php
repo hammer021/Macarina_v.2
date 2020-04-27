@@ -30,7 +30,7 @@ class Login extends CI_Controller {
 	 
 			$this->session->set_userdata($data_session);
 	 
-			redirect(base_url("home"));
+			redirect(base_url("Home"));
 		}else{
 			echo "Username dan password salah !";
 		}
@@ -38,6 +38,6 @@ class Login extends CI_Controller {
  
 	function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url('Login'));
+		redirect(base_url('Login/index'));
 	}
 }
