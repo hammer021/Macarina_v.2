@@ -13,7 +13,7 @@ class Produk extends CI_Controller
 
     public function index()
     {
-        $data["brg"] = $this->produk_model->getAll();
+        $data["barang"] = $this->produk_model->getAll();
         $this->load->view("vbarang",$data);
     }
 
@@ -30,9 +30,10 @@ class Produk extends CI_Controller
 
         redirect(site_url("Produk"));
     }
-
+    
     public function edit($kd_barang = null)
     {
+       
         if (!isset($kd_barang)) redirect('Produk');
        
         $produk = $this->produk_model;
@@ -42,14 +43,17 @@ class Produk extends CI_Controller
         if ($validation->run()) {
             $produk->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect(site_url('Produk'));
         }
 
-        $data["brg"] = $produk->getById($kd_barang);
-        if (!$data["brg"]) show_404();
+        $data["barang"] = $produk->getById($kd_barang);
+        if (!$data["barang"]) show_404();
         
-        $this->load->view("vbarang", $data);
+        $this->load->view("modal_edit", $data);
+                   
+        
     }
-
+  
     public function delete($id=null)
     {
         if (!isset($id)) show_404();
@@ -58,4 +62,5 @@ class Produk extends CI_Controller
             redirect(site_url('Produk'));
         }
     }
+    
 }

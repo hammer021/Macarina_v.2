@@ -55,12 +55,11 @@
 									<th>Stok</th>
 									<th>Gambar</th>
                   <th>Deskripsi</th>
-                  <th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
               
-              <?php foreach ($brg as $produk): ?>
+              <?php foreach ($barang as $produk): ?>
 									<tr>
 										<td width="150">
 											<?php echo $produk->nama_barang ?>
@@ -72,17 +71,20 @@
 											<?php echo $produk->stok ?>
 										</td>
                     <td>
-											<?php //echo $produk->gambar_brg ?>
-                      <img src="<?= base_url('uploads/barang/') . $produk->gambar_brg;?>" class="logo-komunitas mx-auto d-block mb-5" style="width:150px">
+                    <?php echo "<img src='./theme-assets/images/barang/".$produk->gambar_brg."'  width='100px' height='100px'/>" ?>
+											
 										</td>
                     <td>
 											<?php echo $produk->deskripsi ?>
 										</td>
 										<td>
-											<a href="<?php echo site_url('Produk/edit/'.$produk->kd_barang) ?>"
-											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('Produk/delete/'.$produk->kd_barang) ?>')"
-											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                      <a href="<?php echo site_url('Produk/edit/'.$produk->kd_barang) ?>"
+                      class="btn btn-small">
+                      <i class="fas fa-edit"></i> Edit</a>
+											<a onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$produk->nama_barang;?> ?');" 
+                       href="<?php echo site_url('Produk/delete/'.$produk->kd_barang); ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                       
+                                    
 										</td>
 									</tr>
 									<?php endforeach; ?>
@@ -102,7 +104,7 @@
       </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-<!-- Modal -->
+<!-- Modal Input Baru-->
 <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -113,17 +115,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="<?php echo base_url().'Produk/add'; ?>">
+        <form method="post" action="<?php echo base_url().'Produk/add'; ?>" enctype="multipart/form-data">
 
         <div class="form-group">
                 <label name="nama_barang">Nama Barang</label>
                 <input type="text" name="nama_barang" class="form-control">
                 <label name="harga">Harga</label>
-                <input type="number" name="harga" class="form-control">
+                <input type="text" name="harga" class="form-control">
                 <label name="stok">Stok</label>
-                <input type="number" name="stok" class="form-control">
+                <input type="text" name="stok" class="form-control">
                 <label name="gambar">Gambar</label>
-                <input type="file" name="gambar_brg" class="form-control">
+                <input type="file" name="gambar" class="form-control">
                 <label name="deskripsi">Deskripsi</label>
                 <input type="text" name="deskripsi" class="form-control">
         </div>
@@ -137,6 +139,8 @@
   </div>
 </div>
 
-	<?php 
+
+  <?php 
+    
     $this->load->view("template/footer");
     ?>

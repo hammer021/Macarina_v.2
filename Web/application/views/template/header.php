@@ -10,6 +10,7 @@
     <title>MacarinaID</title>
     <link rel="apple-touch-icon" href="<?php echo base_url('theme-assets/images/ico/apple-icon-120.png') ?>">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('theme-assets/images/ico/favicon.ico') ?>">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
