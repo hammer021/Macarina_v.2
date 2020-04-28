@@ -21,6 +21,11 @@ class Home extends CI_Controller {
         redirect(site_url("Produk"));
 	}
 
+	public function reseller()
+    {
+        redirect(site_url("Reseller"));
+	}
+
 	public function charts()
     {
         $this->load->view('vcharts');
