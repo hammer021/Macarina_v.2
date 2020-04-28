@@ -49,7 +49,7 @@ class Produk extends CI_Controller
         $data["barang"] = $produk->getById($kd_barang);
         if (!$data["barang"]) show_404();
         
-        $this->load->view("modal_edit", $data);
+        $this->load->view("modal/edit_barang", $data);
                    
         
     }
