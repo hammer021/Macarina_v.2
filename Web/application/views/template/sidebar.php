@@ -38,6 +38,13 @@
           echo 'nav-item';
            ?>"><a href="<?php echo base_url('Home/barang')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">Data Barang</span></a>
           </li>
+          <li class="<?php
+          if($url == "localhost/Macarina_v.2/Web/Home/reseller")
+          echo 'active';
+          else
+          echo 'nav-item';
+           ?>"><a href="<?php echo base_url('Home/reseller')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">Data Reseller</span></a>
+          </li>
         </ul>
       </div>
       <div class="navigation-background"></div>
