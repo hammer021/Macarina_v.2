@@ -123,7 +123,7 @@
                 <label name="stok">Stok</label>
                 <input type="number" name="stok" class="form-control">
                 <label name="gambar">Gambar</label>
-                <input type="file" name="gambar_brg" class="input-group">
+                <input type="file" name="gambar_brg" class="form-control">
                 <label name="deskripsi">Deskripsi</label>
                 <input type="text" name="deskripsi" class="form-control">
         </div>
