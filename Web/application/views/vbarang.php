@@ -55,6 +55,7 @@
 									<th>Stok</th>
 									<th>Gambar</th>
                   <th>Deskripsi</th>
+                  <th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -71,7 +72,8 @@
 											<?php echo $produk->stok ?>
 										</td>
                     <td>
-											<?php echo $produk->gambar_brg ?>
+											<?php //echo $produk->gambar_brg ?>
+                      <img src="<?= base_url('uploads/barang/') . $produk->gambar_brg;?>" class="logo-komunitas mx-auto d-block mb-5" style="width:150px">
 										</td>
                     <td>
 											<?php echo $produk->deskripsi ?>
@@ -117,11 +119,11 @@
                 <label name="nama_barang">Nama Barang</label>
                 <input type="text" name="nama_barang" class="form-control">
                 <label name="harga">Harga</label>
-                <input type="text" name="harga" class="form-control">
+                <input type="number" name="harga" class="form-control">
                 <label name="stok">Stok</label>
-                <input type="text" name="stok" class="form-control">
+                <input type="number" name="stok" class="form-control">
                 <label name="gambar">Gambar</label>
-                <input type="text" name="gambar_brg" class="form-control">
+                <input type="file" name="gambar_brg" class="input-group">
                 <label name="deskripsi">Deskripsi</label>
                 <input type="text" name="deskripsi" class="form-control">
         </div>
