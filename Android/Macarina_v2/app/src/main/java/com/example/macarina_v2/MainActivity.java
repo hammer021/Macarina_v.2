@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeActivity()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.nav_home:
-                            selectedFragment = new HomeActivity();
+                            selectedFragment = new HomeFragment();
                             break;
                         case R.id.nav_tentang:
-                            selectedFragment = new AboutActivity();
+                            selectedFragment = new AboutFragment();
                             break;
                         case R.id.nav_akun:
-                            selectedFragment = new AccountActivity();
+                            selectedFragment = new AccountFragment();
                             break;
                     }
 
