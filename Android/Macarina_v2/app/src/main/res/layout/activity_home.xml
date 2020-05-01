@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundya"
     tools:context=".HomeActivity">
 
-
-    <ViewFlipper
+    <ImageView
         android:id="@+id/v_flipper"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="268dp"
+        android:layout_height="215dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="236dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
