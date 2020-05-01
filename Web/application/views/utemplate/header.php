@@ -68,7 +68,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          
 	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-			  <li class="nav-item"><a href="<?php echo base_url('login'); ?>" class="nav-link">Shop</a></li>
+			  <li class="nav-item"><a href="<?php echo base_url('Home/shop'); ?>" class="nav-link">Shop</a></li>
 	          <li class="nav-item"><a href="profilperusahaan.php" class="nav-link">Tentang</a></li>
 	          	
 			<li class="nav-item"><a href="testi.php" class="nav-link">Testi</a></li>

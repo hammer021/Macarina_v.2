@@ -31,4 +31,8 @@ class Home extends CI_Controller {
         $this->load->view('vcharts');
 	}
 	
+	public function shop()
+    {
+        $this->load->view('Shop');
+	}
 }

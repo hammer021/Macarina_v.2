@@ -45,6 +45,14 @@
           echo 'nav-item';
            ?>"><a href="<?php echo base_url('Home/reseller')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">Data Reseller</span></a>
           </li>
+          </li>
+          <li class="<?php
+          if($url == "localhost/Macarina_v.2/Web/Home/shop")
+          echo 'active';
+          else
+          echo 'nav-item';
+           ?>"><a href="<?php echo base_url('Home/shop')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">shop</span></a>
+          </li>
         </ul>
       </div>
       <div class="navigation-background"></div>
