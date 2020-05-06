@@ -114,15 +114,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Status</label>
-                            <input type="number" class="form-control <?php echo form_error('status') ? 'is-invalid':'' ?>"
-                             name="status" placeholder="Status..." value="<?php echo $reseller->status ?>"></input>
-                            <div class="invalid-feedback">
-                                <?php echo form_error('status') ?>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <label for="name">Pas Foto</label>
                             <?php echo "<img src='./theme-assets/images/reseller/pas/".$reseller->pas_foto."' width='100px' height='100px'/>"?>
                             
@@ -131,6 +122,20 @@
                             <input type ="hidden" class="form-control" name="old_pas_foto"  value="<?php echo $reseller->pas_foto ?>"></input>
                             <div class="invalid-feedback">
                                 <?php echo form_error('pas_foto') ?>
+                            </div>
+                        </div>                        
+
+                        <div class="form-group">
+                            <label for="name">Status : <?php $sts = $reseller->status;
+                             if ($sts = 1){
+                                echo  "Sudah diAktifkan";
+                             } 
+                             else if ($sts = 0){
+                              echo  "Belum diAktifkan";
+                           }?></label>
+                            
+                            <div class="invalid-feedback">
+                                <?php echo form_error('status') ?>
                             </div>
                         </div>
                         <input class="btn btn-primary" type="submit" name="btn" value="Save" />
