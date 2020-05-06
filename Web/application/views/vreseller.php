@@ -87,6 +87,13 @@
                        ?>
 										</td>
 										<td>
+                    <a href="<?php echo site_url('#Reseller/aktif/'.$res->id_reseller); ?>" class="btn btn-small"><i class="fas fa-edit">
+                    </i> <?php if($status==0){
+                          echo "Aktifkan";
+                      }
+                      else if($status==1){
+                        echo "NonAktifkan";
+                      } ?></a>
                       <a href="<?php echo site_url('Reseller/edit/'.$res->id_reseller) ?>"
                       class="btn btn-small">
                       <i class="fas fa-edit"></i> Edit</a>
