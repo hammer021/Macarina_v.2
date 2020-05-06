@@ -15,23 +15,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".AboutActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".HomeActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBar"
-            tools:ignore="LockedOrientationActivity" />
-
-        <activity
-            android:name=".AccountActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:parentActivityName=".HomeActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/NoActionBar"
-            tools:ignore="LockedOrientationActivity"/>
-
-        <activity
-            android:name=".HomeActivity"
+            android:name=".HomeFragment"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar"

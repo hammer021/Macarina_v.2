@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+    <com.example.moeidbannerlibrary.banner.BannerLayout
+        android:id="@+id/Banner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
