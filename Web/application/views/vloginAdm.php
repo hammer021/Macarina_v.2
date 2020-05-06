@@ -38,7 +38,7 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" action="<?php echo base_url('Login/aksi_login');?>" method="post">
+				<form class="login100-form validate-form" action="<?php echo base_url('LoginAdm/aksi_login');?>" method="post">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Username</span>
 						<input class="input100" type="text" name="username" placeholder="Enter username">
@@ -67,7 +67,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" href="<?php echo base_url('Home/index');?>">
+						<button class="login100-form-btn" href="<?php echo base_url('HomeAdm/index');?>">
 							Login
 						</button>
 					</div>
