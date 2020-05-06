@@ -10,31 +10,31 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
-	<link href="<?php echo base_url('uassets/css/open-iconic-bootstrap.min.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/open-iconic-bootstrap.min.css')?>" rel="stylesheet">
 	
-	<link href="<?php echo base_url('uassetscss/animate.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/animate.css')?>" rel="stylesheet">
 	
-	<link href="<?php echo base_url('uassets/css/owl.carousel.min.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('uassets/css/owl.theme.default.min.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('assets/css/magnific-popup.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/owl.carousel.min.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/owl.theme.default.min.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('assets/css/magnific-popup.css')?>" rel="stylesheet">
 
-	<link href="<?php echo base_url('uassets/css/aos.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('uassets/css/ionicons.min.cs')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/aos.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/ionicons.min.cs')?>" rel="stylesheet">
 
-	<link href="<?php echo base_url('uassets/css/bootstrap-datepicker.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('uassets/css/ionicons.min.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('uassets/css/bootstrap-datepicker.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('uassets/css/jquery.timepicker.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/bootstrap-datepicker.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/ionicons.min.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/bootstrap-datepicker.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/jquery.timepicker.css')?>" rel="stylesheet">
 
-	<link href="<?php echo base_url('uassets/css/flaticon.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('uassets/css/icomoon.css')?>" rel="stylesheet">
-	<link href="<?php echo base_url('uassets/css/style.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/flaticon.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/icomoon.css')?>" rel="stylesheet">
+	<link  type="text/css" href="<?php echo base_url('uassets/css/style.css')?>" rel="stylesheet">
 		
   </head>
   <body class="goto-here">
 
-  
- 
+  <?php
+  $url =  $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>
 
 		<div class="py-1 bg-primary">
     	<div class="container">
@@ -67,9 +67,9 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="<?php echo base_url('Home/index'); ?>" class="nav-link">Home</a></li>
 			  <li class="nav-item"><a href="<?php echo base_url('Home/shop'); ?>" class="nav-link">Shop</a></li>
-	          <li class="nav-item"><a href="profilperusahaan.php" class="nav-link">Tentang</a></li>
+	          <li class="nav-item"><a href="<?php echo base_url('Home/profil'); ?>" class="nav-link">Tentang</a></li>
 	          	
 			<li class="nav-item"><a href="testi.php" class="nav-link">Testi</a></li>
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Kontak</a></li>
@@ -87,25 +87,26 @@
               ?>
 
 			  <li class="nav-item">
-			  			<?php 
-						// if ($user!="") {
-						// 	echo '<a  href="profil.php?id_reseller='.$user.'" class="nav-link"> '.$uname_db.'</a>';
-						// 	echo '<br/>';
-						// }
-						// else {
-						// 	echo '<a href="login.php" class="nav-link">Masuk</a>';
-						// }
+						  <?php 
+						  $user = $this->session->userdata("email");
+						 if ($user!="") {
+						 	echo '<a  href="'.base_url('#').'" class="nav-link"> '.$user.'</a>';
+						 	echo '<br/>';
+						 }
+						 else {
+						 	echo '<a href="'.base_url('Login/index').'" class="nav-link">Masuk</a>';
+						 } 
 					 	?>
 			  </li>
 			  <li class="nav-item">
 			  			<?php 
-						// if ($user!="") {
-						// 	echo '<a href="logout.php" class="nav-link">Keluar</a>';
-						// 	echo '<br/>';
-						// }
-						// else {
-						// 	echo '<a  href="daftar.php" class="nav-link">Daftar</a>';
-						// }
+						 if ($user!="") {
+						 	echo '<a href="'.base_url('Login/logout').'" class="nav-link">Keluar</a>';
+						 	echo '<br/>';
+						 }
+						 else {
+						 	echo '<a  href="daftar.php" class="nav-link">Daftar</a>';
+						 } 
 					 ?>
 			  </li>
 
