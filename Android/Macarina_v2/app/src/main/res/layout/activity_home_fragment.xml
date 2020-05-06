@@ -7,6 +7,7 @@
     tools:context=".HomeFragment">
 
     <com.example.moeidbannerlibrary.banner.BannerLayout
+        android:background="@color/background1"
         android:id="@+id/Banner"
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -14,5 +15,85 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Banner" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp">
+
+            <TextView
+                android:id="@+id/tName"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_button1"
+                android:text="Hi Luqman!"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/colorText"
+                android:textSize="14sp"
+                tools:ignore="RtlCompat" />
+
+            <View
+                android:id="@+id/VAkun"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="17dp"
+                android:layout_toStartOf="@+id/VReport"
+                android:background="@drawable/ic_account" />
+
+            <View
+                android:id="@+id/VReport"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_receipt_black_24dp" />
+
+            <ImageView
+                android:id="@+id/VOrder"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_below="@+id/tName"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="21dp"
+                android:background="@drawable/person_1" />
+
+            <ImageView
+                android:id="@+id/VOrder2"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_below="@+id/VReport"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/person_1" />
+
+            <ImageView
+                android:id="@+id/VOutlet"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_below="@id/VOrder"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/person_1" />
+        </RelativeLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
