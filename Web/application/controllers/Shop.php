@@ -10,7 +10,10 @@ class Shop extends CI_Controller
     {
         $this->load->view("vshop");
     }
-
    
+    public function Shop2()
+    {
+        $this->load->view("vshop2");
+    }
     
 }
