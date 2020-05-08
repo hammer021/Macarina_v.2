@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountActivity"></activity>
+        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".ReportActivity" />
+        <activity android:name=".AccountActivity" />
         <activity android:name=".OrderFragment" />
         <activity
             android:name=".HomeFragment"
