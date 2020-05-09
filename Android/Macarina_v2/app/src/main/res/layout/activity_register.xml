@@ -114,14 +114,14 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/No.Telepon"
+                android:id="@+id/NoTelepon"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
                 android:drawableStart="@drawable/ic_phone"
                 android:drawableLeft="@drawable/ic_phone"
                 android:fontFamily="@font/segoe_ui"
-                android:hint="  No. Telepeon"
+                android:hint="  No. Telpon"
                 android:inputType="number"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -188,14 +188,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/buttonLogin"
+            android:id="@+id/btn_daftar"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:background="@drawable/custom_button1"
             android:stateListAnimator="@null"
-            android:text="Masuk"
+            android:text="Daftar"
             android:textAllCaps="false"
             android:textColor="@color/colorText"
             android:textSize="18sp"
