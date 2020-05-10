@@ -105,7 +105,7 @@
 						 	echo '<br/>';
 						 }
 						 else {
-						 	echo '<a  href="daftar.php" class="nav-link">Daftar</a>';
+						 	echo '<a  href="'.base_url('Daftar').'" class="nav-link">Daftar</a>';
 						 } 
 					 ?>
 			  </li>

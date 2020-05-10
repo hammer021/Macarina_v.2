@@ -9,7 +9,7 @@
           else
           echo 'nav-item mr-auto'; ?>">
           <a class="navbar-brand" href="<?php echo base_url('HomeAdm/index')?>">
-          <img class="brand-logo" alt="Chameleon admin logo" src="<?php echo base_url('theme-assets/images/logo/logo.png')?>"/>
+          <img class="brand-logo" alt="Chameleon admin logo" src="<?php echo base_url('theme-assets/images/logo/logom.png')?>"/>
               <h3 class="brand-text">Macarina</h3></a></li>
           <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
         </ul>
@@ -51,7 +51,7 @@
           echo 'active';
           else
           echo 'nav-item';
-           ?>"><a href="<?php echo base_url('HomeAdm/shop')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">shop</span></a>
+           ?>"><a href="<?php echo base_url('HomeAdm/shop')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">Lap.Transaksi</span></a>
           </li>
         </ul>
       </div>
