@@ -33,6 +33,10 @@ class Home extends CI_Controller {
 	
 	public function shop()
     {
-        $this->load->view('Shop');
+        $this->load->view('vshop');
+	}
+	public function kontak()
+    {
+        $this->load->view('vkontak');
 	}
 }

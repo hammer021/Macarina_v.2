@@ -3,11 +3,11 @@
     ?>
   
 
-    <div class="hero-wrap hero-bread" style="background-image: url('<?php echo base_url("images/Salinan macarina-8.jpg"?>);">
+    <div class="hero-wrap hero-bread" style="background-image: url(<?php echo base_url("images/Salinan macarina-8.jpg")?>);">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Products</span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="<?php echo base_url('Home/index'); ?>">Home</a></span> <span>Products</span></p>
             <h1 class="mb-0 bread">Products</h1>
           </div>
         </div>
@@ -20,7 +20,7 @@
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
     					<li><a href="<?php echo base_url('Shop/Shop2');?>" class="active">Pack</a></li>
-    					<li><a href="<?php echo base_url('Home/Shop');?>" class="">Box</a></li>
+    					<li><a href="<?php echo base_url('Home/shop');?>" class="">Box</a></li>
     				</ul>
     			</div>
     		</div>

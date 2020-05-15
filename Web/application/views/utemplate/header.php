@@ -72,7 +72,7 @@
 	          <li class="nav-item"><a href="<?php echo base_url('Home/profil'); ?>" class="nav-link">Tentang</a></li>
 	          	
 			<li class="nav-item"><a href="testi.php" class="nav-link">Testi</a></li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Kontak</a></li>
+	          <li class="nav-item"><a href="<?php echo base_url('Home/kontak'); ?>" class="nav-link">Kontak</a></li>
 			  
 			  <?php
 			//   if ($user!="") {
