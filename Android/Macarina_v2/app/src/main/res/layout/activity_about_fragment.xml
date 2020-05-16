@@ -218,14 +218,15 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tTujuan"
                     android:layout_marginTop="10dp"
-                    android:text="@string/tujuan" />
+                    android:text="@string/justify"
+                    android:gravity="center"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rVisi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rTujuan">
@@ -240,18 +241,20 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:paddingTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/visi"
-                    android:layout_below="@id/tVisi"/>
+                    android:layout_below="@id/tVisi"
+                    android:gravity="center"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rMisi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
+                android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rVisi">
@@ -266,11 +269,14 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:paddingTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/misi"
-                    android:layout_below="@id/tMisi"/>
+                    android:layout_below="@id/tMisi"
+                    android:gravity="center"/>
+
             </RelativeLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
