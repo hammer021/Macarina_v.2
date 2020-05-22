@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    String url= "http://192.168.100.6/Luqman/Macarina_v.2/web/android.php";
+    String url= "http://192.168.100.88/Luqman/Macarina_v.2/web/android.php";
     TextInputEditText edtEmail, edtPassword;
     Button btnlogin;
     String eml, pw;
@@ -48,10 +48,8 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         PrgsBar = new ProgressBar(LoginActivity.this);
         PrgsBar.setVisibility(View.GONE);
-
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
-
         daftar = findViewById(R.id.daftar_masuk);
         daftar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,9 +63,6 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressDialog.setMessage("Tunggu Beberapa Saat");
-                progressDialog.show();
-                PrgsBar.setVisibility(View.VISIBLE);
                 if (edtEmail.getText().toString().isEmpty()){
                     Toast.makeText(LoginActivity.this, "Email Tidak Boleh Kosong", Toast.LENGTH_LONG).show();
                     progressDialog.dismiss();
@@ -82,8 +77,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(){
-
-
         StringRequest senddata = new StringRequest(Request.Method.POST, ServerApi.URL_LOGIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -97,15 +90,29 @@ public class LoginActivity extends AppCompatActivity {
                     Log.e("ser", datalogin.getString("token"));
                     authdata.getInstance(getApplicationContext()).setdatauser(
                             datalogin.getString("status"),
-                            datalogin.getString("id_registrasi"),
-                            datalogin.getString("nama"),
+                            datalogin.getString("id_reseller"),
+                            datalogin.getString("nama_reseller"),
                             datalogin.getString("token")
                     );
-                    Intent masuk = new Intent(LoginActivity.this , MainActivity.class);
-//                                    startActivity(masuk);
-                    nama_user = datalogin.getString("nama");
+                    nama_user = datalogin.getString("nama_reseller");
                     Log.e("Nama" , "user" + nama_user);
-                    PrgsBar.setVisibility(View.GONE);
+//                    pd.setVisibility(View.GONE);
+                    if (datalogin.getString("status").equals("1")) {
+                        Log.e("ser", "sep gan");
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("Nama" , nama_user);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Aplikasi Hanya Untuk Reseller" , Toast.LENGTH_SHORT).show();
+
+                    }
+//                    } else {
+//                        Toast.makeText(LoginActivity.this, respon.getString("pesan"), Toast.LENGTH_SHORT).show();
+//
+//                    }
+
+//                                pd.dismiss();
+
                 } catch (JSONException e) {
 //                                e.printStackTrace();
                     progressDialog.dismiss();
