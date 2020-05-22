@@ -37,11 +37,11 @@ class Reseller extends REST_Controller {
     * @method : POST
     * @link : api/Reseller/login
     */
-    public function login_post() {
+    public function index_post() {
 
         # Form Validation
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|max_length[16]');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == FALSE) {
             // Form Validation
             $message = array(
@@ -68,20 +68,23 @@ class Reseller extends REST_Controller {
                 $token_data['email'] = $output->email;
                 $token_data['password'] = $output->password;
                 $token_data['pas_foto'] = $output->pas_foto;
-                $token_data['time'] = time();
+                $token_data['status'] = $output->status;
 
                 $akun_token = $this->authorization_token->generateToken($token_data);
 
                 $return_data = [
-                    'id_reseller' = $output->id_reseller;
-                    'nama_reseller' = $output->nama_reseller;
-                    'alamat' = $output->alamat;
-                    'no_tlp' = $output->no_tlp;
-                    'scan_ktp' = $output->scan_ktp;
-                    'no_ktp' = $output->no_ktp;
-                    'email' = $output->email;
-                    'password' = $output->password;
-                    'pas_foto' = $output->pas_foto;
+                    'id_reseller' => $output->id_reseller,
+                    'nama_reseller' => $output->nama_reseller,
+                    'alamat' => $output->alamat,
+                    'no_tlp' => $output->no_tlp,
+                    'scan_ktp' => $output->scan_ktp,
+                    'no_ktp' => $output->no_ktp,
+                    'email' => $output->email,
+                    'password' => $output->password,
+                    'pas_foto' => $output->pas_foto,
+                    'status' => $output->status,
+                    'token' => $akun_token,
+                    'pesan' => "Selamat Datang di Macarina",
                 ];
 
                 // Login Success
