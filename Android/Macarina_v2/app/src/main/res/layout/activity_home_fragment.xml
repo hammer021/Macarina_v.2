@@ -34,7 +34,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/custom_button1"
-                android:text="Hi Luqman!"
+                android:text="Hi "
                 android:gravity="center"
                 android:padding="10dp"
                 android:textAlignment="viewStart"
