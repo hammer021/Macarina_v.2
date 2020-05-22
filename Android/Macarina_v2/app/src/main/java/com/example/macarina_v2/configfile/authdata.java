@@ -9,9 +9,10 @@ public class authdata {
     public static final String SHARED_PREF_NAME = "macarina_v.2";
     private static final String sudahlogin = "n";
 
-    private static final String kode_user = "kode_user";
-    private static final String nama_user = "nama_user";
+    private static final String kode_user = "id_reseller";
+    private static final String nama_user = "nama_reseller";
     private static final String akses_data = "akses_data";
+    private static final String status_user = "status";
     private static final String token = "token";
 
 
@@ -32,9 +33,9 @@ public class authdata {
 
         editor.putString(kode_user, xkode_user);
         editor.putString(nama_user, xnama_user);
+        editor.putString(status_user, xstatus);
         editor.putString(sudahlogin, "y");
         editor.putString(token, tokennya);
-
         editor.apply();
 
         return true;
@@ -66,18 +67,15 @@ public class authdata {
     }
     public String getAksesData() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-
         return sharedPreferences.getString(akses_data, null);
     }
 
     public String getKodeUser() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-
         return sharedPreferences.getString(kode_user, null);
     }
     public String getNamaUser() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-
         return sharedPreferences.getString(nama_user, null);
     }
 }
