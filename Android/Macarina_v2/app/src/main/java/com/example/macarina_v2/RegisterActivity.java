@@ -1,16 +1,17 @@
 package com.example.macarina_v2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,52 +19,46 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.macarina_v2.configfile.ServerApi;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     TextView masuk;
-    EditText Nama, Email, Password, UlangiPassword, Telpon;
-    Button daftar;
-    RequestQueue requestQueue;
-    String NamaHolder, EmailHolder, PasswordHolder, UlangiPasswordHolder, TelponHolder;
-    ProgressDialog progressDialog;
-    String HttpUrl = "http://192.168.1.9/Macarina_v.2/web/register.php";
+    EditText nama, password, password2, email, no_telepon;
+    Button buttonDaftar;
     Boolean CheckEditText;
+    String NameHolder, EmailHolder, PasswordHolder, NoTlpHolder, PasswordHolder2;
+    ProgressDialog progressDialog;
+    RequestQueue requestQueue;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        masuk = findViewById(R.id.tmasuk);
-        Nama = (EditText) findViewById(R.id.nama);
-        Email = (EditText) findViewById(R.id.email);
-        Password = (EditText) findViewById(R.id.password1);
-        UlangiPassword = (EditText) findViewById(R.id.password2);
-        Telpon = (EditText) findViewById(R.id.NoTelepon);
-        daftar = (Button) findViewById(R.id.btn_daftar);
-        masuk = (TextView) findViewById(R.id.tmasuk);
-
-        // Creating Volley newRequestQueue .
+        nama = findViewById(R.id.nama);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password1);
+        password2 = findViewById(R.id.password2);
+        no_telepon = findViewById(R.id.no_telepon);
         requestQueue = Volley.newRequestQueue(RegisterActivity.this);
+        progressDialog = new ProgressDialog(this);
+        progressBar = new ProgressBar(RegisterActivity.this);
 
-        // Assigning Activity this to progress dialog.
-        progressDialog = new ProgressDialog(RegisterActivity.this);
-
-        daftar.setOnClickListener(new View.OnClickListener() {
+        buttonDaftar = findViewById(R.id.buttonDaftar);
+        buttonDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CheckEditTextIsEmptyOrNot();
-                if(CheckEditText){
-                    UserRegistration();
-                }
-                else {
-                    Toast.makeText(RegisterActivity.this, "Data tidak boleh kosong!", Toast.LENGTH_LONG).show();
-                }
-
+                UserRegistration();
             }
         });
+
+        masuk = findViewById(R.id.tmasuk);
         masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,84 +67,86 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-    public void UserRegistration(){
 
-        // Showing progress dialog at user registration time.
-        progressDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
-        progressDialog.show();
+    public void UserRegistration() {
+        final String nama_reseller = this.nama.getText().toString().trim();
+        final String email = this.email.getText().toString().trim();
+        final String no_tlp = this.no_telepon.getText().toString().trim();
+        final String password = this.password.getText().toString().trim();
 
-        // Creating string request with post method.
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
+        if (nama_reseller.matches("")){
+            Toast.makeText(this, "Masukkan Nama Anda", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (email.matches("")){
+            Toast.makeText(this, "Masukkan email Anda", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (no_tlp.matches("")){
+            Toast.makeText(this, "Masukkan No Telpon Anda", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (password.matches("")){
+            Toast.makeText(this, "Masukkan password Anda", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        progressBar.setVisibility(View.GONE);
+        masuk.setVisibility(View.GONE);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ServerApi.URL_REGIS,
                 new Response.Listener<String>() {
-
                     @Override
-                    public void onResponse(String ServerResponse) {
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("status");
+                            String error = jsonObject.getString("error");
+                            String message = jsonObject.getString("message");
 
-                        // Hiding the progress dialog after all task complete.
-                        progressDialog.dismiss();
-
-                        // Showing Echo Response Message Coming From Server.
-                        Toast.makeText(RegisterActivity.this, ServerResponse, Toast.LENGTH_LONG).show();
+                            if (status.equals("200") && error.equals("false")) {
+                                Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent intent2 = new Intent(RegisterActivity.this, LoginActivity.class);
+                                        startActivity(intent2);
+                                    }
+                                }, 1500);
+                            } else {
+                                Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
+                                masuk.setVisibility(View.VISIBLE);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            progressBar.setVisibility(View.GONE);
+                            Intent intent3 = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent3);
+                            Toast.makeText(RegisterActivity.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-
-                        // Hiding the progress dialog after all task complete.
-                        progressDialog.dismiss();
-
-                        // Showing error message if something goes wrong.
-                        Toast.makeText(RegisterActivity.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(RegisterActivity.this, "Error! " + error.toString(), Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                        masuk.setVisibility(View.VISIBLE);
                     }
-                }) {
-            @Override
+                })
+        {
             protected Map<String, String> getParams() {
-
-                // Creating Map String Params.
-                Map<String, String> params = new HashMap<String, String>();
-
-                // Adding All values to Params.
-                // The firs argument should be same as your MySQL database table columns.
-                params.put("email", EmailHolder);
-                params.put("password", PasswordHolder);
-                params.put("nama", NamaHolder);
-                params.put("ulangi_password", UlangiPasswordHolder);
-                params.put("telpon", TelponHolder);
+                Map<String, String> params = new HashMap<>();
+                params.put("nama_reseller",nama_reseller);
+                params.put("email",email);
+                params.put("no_tlp",no_tlp);
+                params.put("password",password);
                 return params;
             }
         };
-        // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(RegisterActivity.this);
 
-        // Adding the StringRequest object into requestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-
     }
-
-
-    public void CheckEditTextIsEmptyOrNot(){
-
-        // Getting values from EditText.
-        NamaHolder = Nama.getText().toString().trim();
-        EmailHolder = Email.getText().toString().trim();
-        PasswordHolder = Password.getText().toString().trim();
-        UlangiPasswordHolder = UlangiPassword.getText().toString().trim();
-        TelponHolder = Telpon.getText().toString().trim();
-
-        // Checking whether EditText value is empty or not.
-        if(TextUtils.isEmpty(NamaHolder) || TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder)|| TextUtils.isEmpty(UlangiPasswordHolder) || TextUtils.isEmpty(TelponHolder))
-        {
-
-            // If any of EditText is empty then set variable value as False.
-            CheckEditText = false;
-
-        }
-        else {
-
-            // If any of EditText is filled then set variable value as True.
-            CheckEditText = true ;
-        }
-    }
-
 }

@@ -3,15 +3,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $con = mysqli_connect('localhost','root', '', 'macarina');
 
-    $Email = $_POST['email'];
+    $email = $_POST['email'];
 
-    $Password = $_POST['password'];
+    $password = $_POST['password'];
 
-    $UlangiPassword = $_POST['ulangi_password'];
+    $ulangi_password = $_POST['ulangi_password'];
 
-    $Nama = $_POST['nama'];
+    $nama_reseller = $_POST['nama_reseller'];
 
-    $Telpon = $_POST['telpon'];
+    $no_tlp = $_POST['no_tlp'];
 
     $CheckSQL = "SELECT * FROM reseller WHERE email='$Email'";
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         echo 'Email Already Exist, Please Enter Another Email.';
     } else {
-        $Sql_Query = "INSERT INTO reseller (email,password,ulangi_password,nama,telpon) values ('$Email','$Password','$UlangiPassword','$Nama','$Telpon')";
+        $Sql_Query = "INSERT INTO reseller (email,password,ulangi_password,nama,no_tlp) values ('$email','$password','$ulangi_password','$nama_reseller','$no_tlp')";
 
         if (mysqli_query($con, $Sql_Query)) {
             echo 'User Registration Successfully';
