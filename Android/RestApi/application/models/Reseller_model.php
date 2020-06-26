@@ -10,12 +10,12 @@ class Reseller_model extends CI_Model {
 
     public function akun_login($email, $password) 
     {
-        $this->db->where('reseller', $email);
+        $this->db->where('email', $email);
         $q = $this->db->get($this->akun_reseller);
 
         if($q->num_rows()) {
             $akun_pass = $q->row('password');
-            if(md5($password) === $akun_pass) {
+            if($password === $akun_pass) {
                 return $q->row();
             }
             return FALSE;

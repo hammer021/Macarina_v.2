@@ -5,10 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.moeidbannerlibrary.banner.BannerLayout;
 import com.example.moeidbannerlibrary.banner.BaseBannerAdapter;
@@ -17,12 +19,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-
+    String namaSession;
+    TextView tname;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_home_fragment, container, false);
         //        return super.onCreateView(inflater, container, savedInstanceState);
+        Intent intent = getActivity().getIntent();
+//get the attached extras from the intent
+//we should use the same key as we used to attach the data.
+        namaSession = intent.getStringExtra("Nama");
+        tname = v.findViewById(R.id.tName);
+        tname.setText("Hai "+namaSession+" !");
         BannerLayout banner=(BannerLayout) v.findViewById(R.id.Banner);
 
         List<String> urls = new ArrayList<>();
