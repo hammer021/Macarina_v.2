@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Macarina_v.2</string>
+    <string name="app_name2">Macarina_v.2</string>
+
+    <string name="tujuan">
+        Menjadi Produk yang mengglobal baik Regional maupun internasional, dan mampu mencukupi tingginya permintaan masyarakat.
+        Berdasarkan data Trade Map, Indonesia mengalami kenaikan tren impor makanan dengan Hs code 1903 (Produk tapioka dan makanan turunannya). Tren impor meningkat jika terjadi permintaan yang tinggi.
+        Akan sangat disayangkan jika peningkatan kebutuhan tersebut dipenuhi dengan impor produk dari negara lain, akan lebih baik jika negara kita mencukupi permintaan tersebut dengan sumberdaya yang ada di Indonesia.
+        Selain mengambil kesempatan tersebut, kami juga ingin berperan untuk menekan impor sekaligus meningkatkan ekspor produk UKM Indonesia, berbekal keyakinan kami, UKM local Indonesia mampu bersaing di pasar global.
+        Kami percaya bahwa Macarina akan siap untuk menembus pasar Global bersama Garuda.
+    </string>
+    <string name="visi">
+        Menjadi pusat industry makanan ringan di Indonesia, dan mampu membawa nama besar Indonesia pada persaingan pasar
+        Internasional serta menjadi penyedia camilan yang inovatif, memiliki standar mutu terbaik dan peduli terhadap kesehatan.
+    </string>
+    <string name="misi">
+        1. Menambah pelanggan dengan edukasi pasar yang berkesinambungan
+        2. Membuka lapangan pekerjaan bagi orang yang kreatif dan berkompeten
+        3. Terus berinovasi menciptakan produk yang aman, sehat dengan standar mutu terbaik untuk dikonsumsi
+        4. Selalu menjaga kualitas produk dengan menggunakan bahan baku yang telah bersertifikasi dan mengontrol proses produksi sesuai SOP
+    </string>
+</resources>
