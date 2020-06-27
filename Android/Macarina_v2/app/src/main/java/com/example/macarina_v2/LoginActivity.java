@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,15 +30,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    String url= "http://192.168.100.88/Luqman/Macarina_v.2/web/android.php";
     TextInputEditText edtEmail, edtPassword;
     Button btnlogin;
-    String eml, pw;
-    Boolean cekinput;
     TextView daftar;
     ProgressBar PrgsBar;
     ProgressDialog progressDialog;
-    String nama_user;
+    authdata authdataa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +70,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        authdataa = new authdata(this);
+        if (authdataa.isLogin() == true){
+            Intent main = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(main);
+            finish();
+        }
     }
 
     public void login(){
@@ -88,19 +91,19 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, respon.getString("pesan"), Toast.LENGTH_SHORT).show();
                     JSONObject datalogin = res.getJSONObject("data");
                     Log.e("ser", datalogin.getString("token"));
-                    authdata.getInstance(getApplicationContext()).setdatauser(
+                    authdataa.setdatauser(
                             datalogin.getString("status"),
                             datalogin.getString("id_reseller"),
                             datalogin.getString("nama_reseller"),
                             datalogin.getString("token")
                     );
-                    nama_user = datalogin.getString("nama_reseller");
-                    Log.e("Nama" , "user" + nama_user);
+//                    nama_user = datalogin.getString("nama_reseller");
+//                    Log.e("Nama" , "user" + nama_user);
 //                    pd.setVisibility(View.GONE);
                     if (datalogin.getString("status").equals("1")) {
                         Log.e("ser", "sep gan");
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        intent.putExtra("Nama" , nama_user);
+//                        intent.putExtra("Nama" , nama_user);
                         startActivity(intent);
                     } else {
                         Toast.makeText(LoginActivity.this, "Aplikasi Hanya Untuk Reseller" , Toast.LENGTH_SHORT).show();

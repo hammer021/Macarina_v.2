@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
-    android:paddingTop="20dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="386dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="20dp"
-        app:cardCornerRadius="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,37 +23,22 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:layout_conversion_absoluteHeight="100dp"
             tools:layout_conversion_absoluteWidth="408dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="20dp">
 
             <TextView
-                android:id="@+id/judul"
+                android:id="@+id/kd_transaksi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Barang"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="6dp"
+                android:text="Kode Transaksi"
                 android:textStyle="bold|italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.051"
                 app:layout_constraintStart_toEndOf="@+id/imgreport"
-                app:layout_constraintTop_toBottomOf="@+id/rank"
-                tools:ignore="MissingConstraints"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="30dp" />
-
-            <TextView
-                android:id="@+id/rank"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Report"
-                android:textStyle="bold|italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.403"
-                app:layout_constraintStart_toEndOf="@+id/imgreport"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toTopOf="@+id/imgreport"
                 tools:layout_conversion_absoluteHeight="19dp"
                 tools:layout_conversion_absoluteWidth="30dp" />
 
@@ -73,31 +57,18 @@
                 tools:layout_conversion_absoluteWidth="49dp" />
 
             <TextView
-                android:id="@+id/quantity"
+                android:id="@+id/grandtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Quantity"
-                android:textStyle="bold|italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.045"
-                app:layout_constraintStart_toEndOf="@+id/imgreport"
-                app:layout_constraintTop_toBottomOf="@+id/judul"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_conversion_absoluteWidth="34dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
                 android:text="Grand Total"
                 android:textStyle="bold|italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.049"
                 app:layout_constraintStart_toEndOf="@+id/imgreport"
-                app:layout_constraintTop_toBottomOf="@+id/quantity" />
+                app:layout_constraintTop_toBottomOf="@+id/kd_transaksi" />
 
             <TextView
+                android:id="@+id/tgltransaksi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="21-07-1999"

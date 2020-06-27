@@ -1,57 +1,74 @@
 package com.example.macarina_v2;
 
+import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.moeidbannerlibrary.banner.BannerLayout;
-import com.example.moeidbannerlibrary.banner.BaseBannerAdapter;
+import com.example.macarina_v2.configfile.authdata;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-    String namaSession;
-    TextView tname;
+    CarouselView carouselView;
+    int[] sampleImage = {
+            R.drawable.person_1,
+            R.drawable.person_2
+    };
+
+    View view;
+    TextView txtlaporan, txtname;
+    authdata authdataa;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_home_fragment, container, false);
-        //        return super.onCreateView(inflater, container, savedInstanceState);
-        Intent intent = getActivity().getIntent();
-//get the attached extras from the intent
-//we should use the same key as we used to attach the data.
-        namaSession = intent.getStringExtra("Nama");
-        tname = v.findViewById(R.id.tName);
-        tname.setText("Hai "+namaSession+" !");
-        BannerLayout banner=(BannerLayout) v.findViewById(R.id.Banner);
-
-        List<String> urls = new ArrayList<>();
-        urls.add("https://akcdn.detik.net.id/visual/2019/02/27/ee1de75c-ec00-4d78-84da-5921c986a77a_169.jpeg?w=360&q=90");
-        urls.add("https://cf.shopee.co.id/file/8f559d5df43c33f9e78d49316e7688b6");
-        urls.add("https://cf.shopee.co.id/file/8f559d5df43c33f9e78d49316e7688b6");
-        urls.add("https://cf.shopee.co.id/file/8f559d5df43c33f9e78d49316e7688b6");
-        urls.add("https://cf.shopee.co.id/file/8f559d5df43c33f9e78d49316e7688b6");
-
-
-        BaseBannerAdapter webBannerAdapter=new BaseBannerAdapter(getActivity().getApplicationContext(),urls);
-        webBannerAdapter.setOnBannerItemClickListener(new BannerLayout.OnBannerItemClickListener() {
+        carouselView = v.findViewById(R.id.Banner);
+        carouselView.setPageCount(sampleImage.length);
+        view = v.findViewById(R.id.viewLaporan);
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(int position)
-            {
-
-
+            public void onClick(View v) {
+                Intent a = new Intent(getContext(), ReportActivity.class);
+                startActivity(a);
             }
         });
-        banner.setAdapter(webBannerAdapter);
+        txtlaporan = v.findViewById(R.id.textlaporan);
+        txtlaporan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent b = new Intent(getContext(), ReportActivity.class);
+                startActivity(b);
+            }
+        });
+
+        authdataa = new authdata(getContext());
+        txtname = v.findViewById(R.id.tName);
+        txtname.setText(authdataa.getNamaUser());
+
+        ImageListener imageListener = new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(sampleImage[position]);
+            }
+        };
+
+        carouselView.setImageListener(imageListener);
     return v;
     }
 
