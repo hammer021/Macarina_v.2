@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2020 at 11:53 AM
+-- Generation Time: Jun 27, 2020 at 05:30 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -113,15 +113,9 @@ CREATE TABLE `barang` (
   `harga` int(11) NOT NULL,
   `stok` int(11) NOT NULL,
   `gambar_brg` varchar(255) NOT NULL DEFAULT 'default.jpg',
-  `deskripsi` varchar(255) NOT NULL
+  `deskripsi` varchar(255) NOT NULL,
+  `id_kemasan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `barang`
---
-
-INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`, `deskripsi`) VALUES
-('5ebfc5b56e5c3', 'Cobaasdd', 1000, 10, '5ebfc5b56e5c3.jpg', 'nope');
 
 -- --------------------------------------------------------
 
@@ -130,17 +124,6 @@ INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`,
 -- (See below for the actual view)
 --
 CREATE TABLE `bayar` (
-`id_bank` int(5)
-,`nama_bank` varchar(25)
-,`kd_transaksi` varchar(100)
-,`id_reseller` varchar(255)
-,`tgl_transaksi` date
-,`grand_total` int(11)
-,`bukti_bayar` varchar(255)
-,`tgl_bayar` date
-,`nama_rek_res` varchar(25)
-,`no_rek_res` varchar(25)
-,`status_pesan` enum('0','1')
 );
 
 -- --------------------------------------------------------
@@ -150,7 +133,7 @@ CREATE TABLE `bayar` (
 --
 
 CREATE TABLE `detail_transaksi` (
-  `id_detail` int(11) NOT NULL,
+  `id_detail` varchar(25) NOT NULL,
   `kd_barang` varchar(255) NOT NULL,
   `id_reseller` varchar(255) NOT NULL,
   `qty_det` int(11) NOT NULL DEFAULT '1',
@@ -9452,6 +9435,18 @@ INSERT INTO `kel` (`kd_kel`, `sys_code`, `kelurahan`, `kode_pos`, `price`, `cepa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kemasan`
+--
+
+CREATE TABLE `kemasan` (
+  `id_kemasan` varchar(255) NOT NULL,
+  `kemasan` varchar(255) NOT NULL,
+  `id_varian` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `konten`
 --
 
@@ -9514,7 +9509,18 @@ CREATE TABLE `transaksi` (
   `kd_transaksi` varchar(100) NOT NULL,
   `tgl_transaksi` date NOT NULL,
   `grand_total` int(11) NOT NULL,
-  `id_reseller` varchar(255) NOT NULL
+  `id_detail` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `varian`
+--
+
+CREATE TABLE `varian` (
+  `id_varian` varchar(255) NOT NULL,
+  `varian` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -9574,14 +9580,15 @@ ALTER TABLE `bank`
 -- Indexes for table `barang`
 --
 ALTER TABLE `barang`
-  ADD PRIMARY KEY (`kd_barang`);
+  ADD PRIMARY KEY (`kd_barang`),
+  ADD KEY `kemasan` (`id_kemasan`);
 
 --
 -- Indexes for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail`),
-  ADD KEY `res1` (`id_reseller`);
+  ADD KEY `res` (`id_reseller`);
 
 --
 -- Indexes for table `kab`
@@ -9602,6 +9609,13 @@ ALTER TABLE `kec`
 ALTER TABLE `kel`
   ADD PRIMARY KEY (`kd_kel`),
   ADD KEY `kec` (`sys_code`);
+
+--
+-- Indexes for table `kemasan`
+--
+ALTER TABLE `kemasan`
+  ADD PRIMARY KEY (`id_kemasan`),
+  ADD KEY `var` (`id_varian`);
 
 --
 -- Indexes for table `konten`
@@ -9628,7 +9642,13 @@ ALTER TABLE `reseller`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`kd_transaksi`),
-  ADD KEY `res` (`id_reseller`);
+  ADD KEY `det` (`id_detail`);
+
+--
+-- Indexes for table `varian`
+--
+ALTER TABLE `varian`
+  ADD PRIMARY KEY (`id_varian`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -9651,12 +9671,6 @@ ALTER TABLE `alamat_kirim`
 --
 ALTER TABLE `bank`
   MODIFY `id_bank` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `detail_transaksi`
---
-ALTER TABLE `detail_transaksi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `konten`
@@ -9684,10 +9698,16 @@ ALTER TABLE `alamat_kirim`
   ADD CONSTRAINT `res2` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 
 --
+-- Constraints for table `barang`
+--
+ALTER TABLE `barang`
+  ADD CONSTRAINT `kemasan` FOREIGN KEY (`id_kemasan`) REFERENCES `kemasan` (`id_kemasan`);
+
+--
 -- Constraints for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  ADD CONSTRAINT `res1` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
+  ADD CONSTRAINT `res` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 
 --
 -- Constraints for table `kec`
@@ -9702,6 +9722,12 @@ ALTER TABLE `kel`
   ADD CONSTRAINT `kec` FOREIGN KEY (`sys_code`) REFERENCES `kec` (`sys_code`);
 
 --
+-- Constraints for table `kemasan`
+--
+ALTER TABLE `kemasan`
+  ADD CONSTRAINT `var` FOREIGN KEY (`id_varian`) REFERENCES `varian` (`id_varian`);
+
+--
 -- Constraints for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
@@ -9712,7 +9738,7 @@ ALTER TABLE `pembayaran`
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `res` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
+  ADD CONSTRAINT `det` FOREIGN KEY (`id_detail`) REFERENCES `detail_transaksi` (`id_detail`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
