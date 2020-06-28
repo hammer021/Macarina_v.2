@@ -54,6 +54,8 @@
 									<th>Harga</th>
 									<th>Stok</th>
 									<th>Gambar</th>
+                  <th>Kemasan</th>
+                  <th>Varian</th>
                   <th>Deskripsi</th>
 								</tr>
 							</thead>
@@ -75,8 +77,15 @@
 											
 										</td>
                     <td>
+											<?php echo $produk->kemasan ?>
+										</td>
+                    <td>
+											<?php echo $produk->varian ?>
+										</td>
+                    <td>
 											<?php echo $produk->deskripsi ?>
 										</td>
+                    
 										<td>
                       <a href="<?php echo site_url('Produk/edit/'.$produk->kd_barang) ?>"
                       class="btn btn-small">
@@ -128,6 +137,18 @@
                 <input type="file" name="gambar" class="form-control">
                 <label name="deskripsi">Deskripsi</label>
                 <input type="text" name="deskripsi" class="form-control">
+                <label name="varian">Pilih Varian</label>
+                <select class="form-control" name="varian" id="varian" >
+                <?php foreach($varian as $var):?>
+                <option value="<?php echo $var->id_varian;?>"><?php echo $var->varian;?></option>
+                <?php endforeach;?>
+                </select>
+                <label name="varian">Pilih Kemasan</label>
+                <select class="form-control" name="kemasan" id="kemasan" >
+                <?php foreach($kemasan as $kem):?>
+                <option value="<?php echo $kem->id_kemasan;?>"><?php echo $kem->kemasan;?></option>
+                <?php endforeach;?>
+                </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Simpan</button>

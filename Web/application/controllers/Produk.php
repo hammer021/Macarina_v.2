@@ -14,6 +14,8 @@ class Produk extends CI_Controller
     public function index()
     {
         $data["barang"] = $this->produk_model->getAll();
+        $data["kemasan"] = $this->produk_model->getKemasan();
+        $data["varian"] = $this->produk_model->getVarian();
         $this->load->view("vbarang",$data);
     }
 
