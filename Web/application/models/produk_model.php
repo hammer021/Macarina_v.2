@@ -90,8 +90,8 @@ class produk_model extends CI_Model
         $this->stok = $post["stok"];
         $this->gambar_brg = $this->_uploadImage();
         $this->deskripsi = $post["deskripsi"];
-        $this->id_kemasan = $post["id_kemasan"];
-        $this->id_varian = $post["id_varian"];
+        $this->id_kemasan = $post["kemasan"];
+        $this->id_varian = $post["varian"];
         return $this->db->insert($this->_table, $this);
     }
     public function update()
