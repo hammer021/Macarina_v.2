@@ -49,7 +49,6 @@
 						<table class="table">
 							<thead>
 								<tr>
-									
 									<th>Nama Barang</th>
 									<th>Harga</th>
 									<th>Stok</th>
@@ -61,7 +60,7 @@
 							</thead>
 							<tbody>
               
-              <?php foreach ($barang as $produk): ?>
+              <?php  foreach ($barang as $produk): ?>
 									<tr>
 										<td width="150">
 											<?php echo $produk->nama_barang ?>

@@ -58,6 +58,7 @@ class produk_model extends CI_Model
         $this->db->from('barang');
         $this->db->join('kemasan', 'barang.id_kemasan = kemasan.id_kemasan');
         $this->db->join('varian', 'barang.id_varian = varian.id_varian');
+        $this->db->order_by('barang.kd_barang', 'asc');
         $income = $this->db->get()->result();
         return $income;
       
@@ -78,7 +79,14 @@ class produk_model extends CI_Model
     }
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["kd_barang" => $id])->row();
+        $this->db->select('barang.*, kemasan.kemasan, varian.varian');
+        $this->db->from('barang');
+        $this->db->join('kemasan', 'barang.id_kemasan = kemasan.id_kemasan');
+        $this->db->join('varian', 'barang.id_varian = varian.id_varian');
+        $this->db->where('barang.kd_barang',$id);
+        $income = $this->db->get()->row();
+        return $income;
+        
     }
 
     public function save()
@@ -109,6 +117,8 @@ class produk_model extends CI_Model
         }
         
         $this->deskripsi = $post["deskripsi"];
+        $this->id_kemasan = $post["kemasan"];
+        $this->id_varian = $post["varian"];
         return $this->db->update($this->_table, $this, array('kd_barang' => $post['kd_barang']));
     }
     public function delete($id)

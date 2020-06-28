@@ -49,6 +49,8 @@ class Produk extends CI_Controller
         }
 
         $data["barang"] = $produk->getById($kd_barang);
+        $data["kemasan"] = $this->produk_model->getKemasan();
+        $data["varian"] = $this->produk_model->getVarian();
         if (!$data["barang"]) show_404();
         
         $this->load->view("modal/edit_barang", $data);
