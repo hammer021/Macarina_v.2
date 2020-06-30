@@ -1,0 +1,470 @@
+[
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_logo2_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xhdpi\\logo2_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_logo2_foreground.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxhdpi\\logo2_foreground.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_cart.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-mdpi\\cart.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_logout.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_logout.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\font_segoe_ui_bold_italic.ttf.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\font\\segoe_ui_bold_italic.ttf"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\font_nexa_light.otf.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\font\\nexa_light.otf"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home_fragment.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_home_fragment.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_map.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\map.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_logo2_foreground.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-mdpi\\logo2_foreground.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_back.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-mdpi\\back.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_orders1.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xxhdpi\\orders1.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_man.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_man.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v21_ic_edit_button.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi-v21\\ic_edit_button.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_order_pcs.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_order_pcs.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_location_on_black_24dp.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_location_on_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_help.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_help.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_logo2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxxhdpi\\logo2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_akun_fragment.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_akun_fragment.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_logo2_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-mdpi\\logo2_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_phone.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_phone.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_about_fragment.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_about_fragment.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_receipt_black_24dp.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_receipt_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_logo.jpg.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xhdpi\\logo.jpg"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_report.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\list_report.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_orders2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xxhdpi\\orders2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_receipt_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_receipt_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_logo2_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxxhdpi\\logo2_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_report.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_report.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_backgroundnya2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xhdpi\\backgroundnya2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_orders1.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-mdpi\\orders1.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_orders2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xxxhdpi\\orders2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_logo2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xhdpi\\logo2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_person_1.jpg.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\person_1.jpg"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_location_on_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_location_on_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_orders2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-hdpi\\orders2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_logo2_foreground.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xhdpi\\logo2_foreground.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v21_ic_logout.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi-v21\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_cart.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xxxhdpi\\cart.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_receipt_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_receipt_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_orders1.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-ldpi\\orders1.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_logo2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxhdpi\\logo2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_logo2.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-anydpi-v26\\logo2.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_checkout.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_checkout.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_orders1.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xhdpi\\orders1.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_information.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_information.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_email.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_person_2.jpg.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\person_2.jpg"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_location_on_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_location_on_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_location_on_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_location_on_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_navigation.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\menu\\bottom_navigation.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_orders2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-ldpi\\orders2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_button_upload.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable\\custom_button_upload.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_logo2_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-hdpi\\logo2_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_receipt_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_receipt_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_orders.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\orders.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_logo2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-mdpi\\logo2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_account.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_account.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_cart.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-hdpi\\cart.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_receipt_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_receipt_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_orders2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-mdpi\\orders2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_custom_button1.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\custom_button1.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_logo2_foreground.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxxhdpi\\logo2_foreground.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_profil.jpg.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\profil.jpg"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v24_ic_man.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi-v24\\ic_man.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_location_on_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_location_on_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\font_nexa_bold.otf.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\font\\nexa_bold.otf"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_account.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_edit_account.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_logo2_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxhdpi\\logo2_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_logo2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-hdpi\\logo2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_orders1.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-hdpi\\orders1.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\font_segoe_ui.ttf.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\font\\segoe_ui.ttf"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\font_comicsansms.ttf.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\font\\comicsansms.ttf"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_home.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_home.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_location_on_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_location_on_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_cart.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xxhdpi\\cart.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_cart.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xhdpi\\cart.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_lock.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\ic_lock.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_logo2_round.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-anydpi-v26\\logo2_round.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\font_segoe_ui_bold.ttf.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\font\\segoe_ui_bold.ttf"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_location_on_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_location_on_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_orders2.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xhdpi\\orders2.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_receipt_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_receipt_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_orders1.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xxxhdpi\\orders1.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_edit_button.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_edit_button.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_custom_button3.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\custom_button3.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_person_3.jpg.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\person_3.jpg"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_cart.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-ldpi\\cart.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_logo2_foreground.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-hdpi\\logo2_foreground.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_receipt_black_24dp.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_receipt_black_24dp.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_order_pack.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\layout\\activity_order_pack.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_backgroundya.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-xhdpi\\backgroundya.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_dekstoplogo.jpg.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\dekstoplogo.jpg"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_splash_screen.xml.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\drawable-v24\\splash_screen.xml"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\build\\intermediates\\res\\merged\\debug\\font_segoe_ui_italic.ttf.flat",
+        "source": "C:\\xampp\\htdocs\\Macarina_v.2\\Macarina_v2\\app\\src\\main\\res\\font\\segoe_ui_italic.ttf"
+    }
+]

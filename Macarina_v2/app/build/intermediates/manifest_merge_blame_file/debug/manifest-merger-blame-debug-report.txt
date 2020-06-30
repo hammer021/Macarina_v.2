@@ -1,0 +1,134 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.macarina_v2"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:6:22-64
+12
+13    <application
+13-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:8:5-62:19
+14        android:allowBackup="true"
+14-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:9:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.1.0] C:\Users\Luqman\.gradle\caches\transforms-2\files-2.1\34b4ab0d8b65ac74ddd00d45b26dd963\core-1.1.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:hardwareAccelerated="true"
+17-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:10:9-43
+18        android:icon="@mipmap/logo2_foreground"
+18-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:11:9-48
+19        android:label="@string/app_name"
+19-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:12:9-41
+20        android:roundIcon="@mipmap/ic_launcher_round"
+20-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:13:9-54
+21        android:supportsRtl="true"
+21-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:14:9-35
+22        android:testOnly="true"
+23        android:theme="@style/AppTheme" >
+23-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:15:9-40
+24        <activity android:name="com.example.macarina_v2.ActivityCheckout" />
+24-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:16:9-63
+24-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:16:19-51
+25        <activity android:name="com.example.macarina_v2.ActivityOrderPack" />
+25-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:17:9-55
+25-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:17:19-52
+26        <activity android:name="com.example.macarina_v2.ActivityOrderPcs" />
+26-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:18:9-54
+26-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:18:19-51
+27        <activity android:name="com.example.macarina_v2.EditAccountActivity" />
+27-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:19:9-57
+27-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:19:19-54
+28        <activity android:name="com.example.macarina_v2.ReportActivity" />
+28-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:20:9-52
+28-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:20:19-49
+29        <activity
+29-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:21:9-27:56
+30            android:name="com.example.macarina_v2.AkunFragment"
+30-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:22:13-41
+31            android:configChanges="orientation|keyboardHidden"
+31-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:23:13-63
+32            android:parentActivityName="com.example.macarina_v2.HomeFragment"
+32-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:24:13-55
+33            android:screenOrientation="portrait"
+33-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:25:13-49
+34            android:theme="@style/NoActionBar" />
+34-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:26:13-47
+35        <activity
+35-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:28:9-33:56
+36            android:name="com.example.macarina_v2.HomeFragment"
+36-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:29:13-41
+37            android:configChanges="orientation|keyboardHidden"
+37-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:30:13-63
+38            android:screenOrientation="portrait"
+38-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:31:13-49
+39            android:theme="@style/NoActionBar" />
+39-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:32:13-47
+40        <activity
+40-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:34:9-40:56
+41            android:name="com.example.macarina_v2.RegisterActivity"
+41-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:35:13-45
+42            android:configChanges="orientation|keyboardHidden"
+42-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:36:13-63
+43            android:parentActivityName="com.example.macarina_v2.LoginActivity"
+43-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:37:13-56
+44            android:screenOrientation="portrait"
+44-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:38:13-49
+45            android:theme="@style/NoActionBar" />
+45-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:39:13-47
+46        <activity
+46-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:41:9-46:56
+47            android:name="com.example.macarina_v2.LoginActivity"
+47-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:42:13-42
+48            android:configChanges="orientation|keyboardHidden"
+48-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:43:13-63
+49            android:screenOrientation="portrait"
+49-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:44:13-49
+50            android:theme="@style/NoActionBar" />
+50-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:45:13-47
+51        <activity
+51-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:47:9-52:56
+52            android:name="com.example.macarina_v2.MainActivity"
+52-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:48:13-41
+53            android:configChanges="orientation|keyboardHidden"
+53-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:49:13-63
+54            android:screenOrientation="portrait"
+54-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:50:13-49
+55            android:theme="@style/NoActionBar" />
+55-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:51:13-47
+56        <activity
+56-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:53:9-61:20
+57            android:name="com.example.macarina_v2.SplashScreen"
+57-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:54:13-41
+58            android:theme="@style/SplashTheme" >
+58-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:55:13-47
+59            <intent-filter>
+59-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:56:13-60:29
+60                <action android:name="android.intent.action.MAIN" />
+60-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:57:17-69
+60-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:57:25-66
+61
+62                <category android:name="android.intent.category.LAUNCHER" />
+62-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:59:17-77
+62-->C:\xampp\htdocs\Macarina_v.2\Macarina_v2\app\src\main\AndroidManifest.xml:59:27-74
+63            </intent-filter>
+64        </activity>
+65
+66        <provider
+66-->[com.squareup.picasso:picasso:2.71828] C:\Users\Luqman\.gradle\caches\transforms-2\files-2.1\c133f5b7896b90dc3c541946e69b1e03\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+67            android:name="com.squareup.picasso.PicassoProvider"
+67-->[com.squareup.picasso:picasso:2.71828] C:\Users\Luqman\.gradle\caches\transforms-2\files-2.1\c133f5b7896b90dc3c541946e69b1e03\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+68            android:authorities="com.example.macarina_v2.com.squareup.picasso"
+68-->[com.squareup.picasso:picasso:2.71828] C:\Users\Luqman\.gradle\caches\transforms-2\files-2.1\c133f5b7896b90dc3c541946e69b1e03\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+69            android:exported="false" />
+69-->[com.squareup.picasso:picasso:2.71828] C:\Users\Luqman\.gradle\caches\transforms-2\files-2.1\c133f5b7896b90dc3c541946e69b1e03\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+70    </application>
+71
+72</manifest>

@@ -60,7 +60,6 @@ class EditUser extends REST_Controller{
                         'scan_ktp' => $config,
                         'no_ktp' => $this->put('no_ktp'),
                         'email' => $this->put('email'),
-                        'password' => md5($this->put('password')),
                         'pas_foto' => $config2
                     );
 
@@ -85,10 +84,8 @@ class EditUser extends REST_Controller{
                             'nama_reseller' => $this->put('nama_reseller'),
                             'alamat' => $this->put('alamat'),
                             'no_tlp' => $this->put('no_tlp'),
-                            'scan_ktp' => $config,
                             'no_ktp' => $this->put('no_ktp'),
-                            'email' => $this->put('email'),
-                            'password' => md5($this->put('password'))               
+                            'email' => $this->put('email')              
                         );
                         
                         if ($this->db->update('reseller', $data, ['id_reseller' => $id])) {                        

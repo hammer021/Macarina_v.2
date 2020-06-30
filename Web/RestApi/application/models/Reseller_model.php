@@ -50,4 +50,22 @@ class Reseller_model extends CI_Model {
         
     }
 
+    public function buat_kode(){
+        $this->db->select('RIGHT(reseller.id_reseller,6) as kode',FALSE);
+        $this->db->order_by('id_reseller', 'DESC');
+        $this->db->limit(1);
+
+        $query=$this->db->get('reseller');
+
+        if ($query->num_rows()<>0) {
+            $data=$query->row();
+            $kode=intval($data->kode)+1;
+        }else{
+            $kode=1;
+        }
+        $kode_max=str_pad($kode,6,"0",STR_PAD_LEFT);
+        $kode_jadi="RSL000".$kode_max;
+        return $kode_jadi;
+    }
+
 }
