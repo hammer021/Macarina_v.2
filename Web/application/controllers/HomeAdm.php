@@ -35,4 +35,8 @@ class HomeAdm extends CI_Controller {
     {
         $this->load->view('Shop');
 	}
+	public function transaksi()
+    {
+        redirect(site_url("Transaksi"));
+	}
 }

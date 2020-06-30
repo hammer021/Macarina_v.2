@@ -51,7 +51,7 @@
           echo 'active';
           else
           echo 'nav-item';
-           ?>"><a href="<?php echo base_url('HomeAdm/shop')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">Lap.Transaksi</span></a>
+           ?>"><a href="<?php echo base_url('HomeAdm/transaksi')?>"><i class="ft-message-circle"></i><span class="menu-title" data-i18n="">Lap.Transaksi</span></a>
           </li>
         </ul>
       </div>

@@ -17,19 +17,6 @@ class Reseller extends CI_Controller
         $this->load->view("vreseller",$data);
     }
 
-    public function add()
-    {
-        $reseller = $this->reseller_model;
-        $validation = $this->form_validation;
-        $validation->set_rules($reseller->rules());
-
-        if ($validation->run()) {
-            $reseller->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
-
-        redirect(site_url("Reseller"));
-    }
     
     public function edit($id_reseller = null)
     {

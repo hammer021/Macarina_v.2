@@ -55,21 +55,6 @@ class reseller_model extends CI_Model
         return $this->db->get_where($this->_table, ["id_reseller" => $id])->row();
     }
 
-    public function save()
-    {
-        $post = $this->input->post();
-        $this->id_reseller = uniqid();
-        $this->nama_reseller = $post["nama_reseller"];
-        $this->alamat = $post["alamat"];
-        $this->no_tlp = $post["no_tlp"];
-        $this->scan_ktp = $this->_uploadScan();
-        $this->no_ktp = $post["no_ktp"];
-        $this->email = $post["email"];
-        $this->password = $post["password"];
-        //$this->status = $post["status"];
-        $this->pas_foto = $this->_uploadPas();
-        return $this->db->insert($this->_table, $this);
-    }
     public function update()
     {
         $post = $this->input->post();

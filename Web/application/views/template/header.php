@@ -75,7 +75,7 @@
                 <span class="avatar avatar-online"><img src="<?php echo base_url('theme-assets/images/portrait/small/avatar-s-19.png')?>"><i></i></span></a>
                 <div class="dropdown-menu dropdown-menu-right">
                   <div class="arrow_box_right"><a class="dropdown-item" href="#"><span class="avatar avatar-online"><span class="user-name text-bold-700 ml-1"><?php echo $this->session->userdata("nama"); ?></span></span></a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" href="<?php echo base_url('Login/logout'); ?>"><i class="ft-power"></i> Logout</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="<?php echo base_url('LoginAdm/logout'); ?>"><i class="ft-power"></i> Logout</a>
                   </div>
                 </div>
               </li>

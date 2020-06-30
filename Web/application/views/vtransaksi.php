@@ -14,7 +14,7 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
           <div class="content-header-left col-md-4 col-12 mb-2">
-            <h3 class="content-header-title">Reseller</h3>
+            <h3 class="content-header-title">Transaksi</h3>
           </div>
           <div class="content-header-right col-md-8 col-12">
             <div class="breadcrumbs-top float-md-right">
@@ -22,7 +22,7 @@
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.html">Home</a>
                   </li>
-                  <li class="breadcrumb-item active">Reseller
+                  <li class="breadcrumb-item active">Transaksi
                   </li>
                 </ol>
               </div>
@@ -36,68 +36,63 @@
 	<div class="col-12">
 		<div class="card">
 			<div class="card-header">
-				<h4 class="card-title">Data Reseller</h4>
+				<h4 class="card-title">Data Transaksi</h4>
 				<a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
 				<div class="heading-elements">
 				</div>
 			</div>
 			<div class="card-content collapse show">
 				<div class="card-body">
-					<p class="card-text">Data Reseller yang terdaftar : </p>
+					<p class="card-text">Data Transaksi yang ada : </p>
          
 					<div class="table-responsive">
 						<table class="table">
 							<thead>
 								<tr>
 									
+									<th>Kode Transaksi</th>
 									<th>Nama Reseller</th>
-									<th>Alamat</th>
-									<th>No Telepon</th>
-									<th>Foto</th>
-                  <th>Status</th>
+									<th>Grand Total</th>
+									<th>Tgl Transaksi</th>
+                  <th>Status Bayar</th>
+                  <th>Bukti Bayar</th>
 								</tr>
 							</thead>
 							<tbody>
               
-              <?php foreach ($reseller as $res): ?>
+              <?php foreach ($transaksi as $trans): ?>
 									<tr>
 										<td width="150">
-											<?php echo $res->nama_reseller ?>
+											<?php echo $trans->kd_transaksi ?>
 										</td>
 										<td>
-											<?php echo $res->alamat ?>
+											<?php echo $trans->nama_reseller ?>
 										</td>
 										<td>
-											<?php echo $res->no_tlp ?>
-										</td>
+											<?php echo $trans->grand_total ?>
+                    </td>
                     <td>
-                    <?php echo "<img src='./theme-assets/images/reseller/pas/".$res->pas_foto."'  width='100px' height='100px'/>" ?>
-											
-										</td>
+											<?php echo $trans->tgl_transaksi ?>
+                    </td>
                     <td>
-                      <?php 
-                      $status=$res->status;
-                      if($status==0){
-                          echo "Belum diAktifkan";
+                    <?php 
+                      $status=$trans->status_bayar;
+                      if($status=="belum_bayar"){
+                          echo "Belum Bayar";
                       }
-                      else if($status==1){
-                        echo "Sudah diAktifkan";
+                      else if($status=="sudah_bayar"){
+                        echo "Sudah Bayar";
                       }
                        ?>
 										</td>
+                    <td>
+                    <?php echo "<img src='./uploads/reseller/bukti_bayar/".$trans->bukti_bayar."'  width='100px' height='100px'/>" ?>
+											
+										</td>
+                    
 										<td>
-                    <a href="<?php echo site_url('#Reseller/aktif/'.$res->id_reseller); ?>" class="btn btn-small"><i class="fas fa-edit">
-                    </i> <?php if($status==0){
-                          echo "Aktifkan";
-                      }
-                      else if($status==1){
-                        echo "NonAktifkan";
-                      } ?></a>
-                      <a href="<?php echo site_url('Reseller/edit/'.$res->id_reseller) ?>"
-                      class="btn btn-small">
-                      <i class="fas fa-edit"></i> Edit</a>
-											<a onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$res->nama_reseller;?> ?');" 
-                       href="<?php echo site_url('Reseller/delete/'.$res->id_reseller); ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                    	<a onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$trans->nama_reseller;?> ?');" 
+                       href="<?php echo site_url('Transaksi/delete/'.$trans->kd_transaksi); ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                        
                                     
 										</td>
