@@ -87,11 +87,27 @@
                         </div>
 
                         <div class="form-group">
+                        <label for="name">Kemasan</label>
+                        <select class="form-control" name="kemasan" id="kemasan" >
+                        <?php foreach($kemasan as $kem):?>
+                        <option value="<?php echo $kem->id_kemasan;?>"><?php echo $kem->kemasan;?></option>
+                        <?php endforeach;?>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                        <label for="name">Varian</label>
+                        <select class="form-control" name="varian" id="varian" >
+                        <?php foreach($varian as $var):?>
+                        <option value="<?php echo $var->id_varian;?>"><?php echo $var->varian;?></option>
+                        <?php endforeach;?>
+                        </select>
+                        </div>
+                        <div class="form-group">
                             <label for="name">Deskripsi</label>
                             <input class="form-control <?php echo form_error('deskripsi') ? 'is-invalid':'' ?>"
                              name="deskripsi" placeholder="Deskripsi..." value="<?php echo $barang->deskripsi ?>"></input>
                             <div class="invalid-feedback">
-                                <?php echo form_error('stok') ?>
+                                <?php echo form_error('Deskripsi') ?>
                             </div>
                         </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2020 at 05:30 PM
+-- Generation Time: Jun 28, 2020 at 07:51 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -114,8 +114,17 @@ CREATE TABLE `barang` (
   `stok` int(11) NOT NULL,
   `gambar_brg` varchar(255) NOT NULL DEFAULT 'default.jpg',
   `deskripsi` varchar(255) NOT NULL,
-  `id_kemasan` varchar(255) NOT NULL
+  `id_kemasan` varchar(255) NOT NULL,
+  `id_varian` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`, `deskripsi`, `id_kemasan`, `id_varian`) VALUES
+('BR00001', 'Coba', 1000, 10, 'BR00001.jpg', 'coklat enakkk', '2', '2'),
+('BR00002', 'asdas', 1000, 10, 'BR00002.jpg', 'sdfsd', '1', '0');
 
 -- --------------------------------------------------------
 
@@ -124,6 +133,17 @@ CREATE TABLE `barang` (
 -- (See below for the actual view)
 --
 CREATE TABLE `bayar` (
+`id_bank` int(5)
+,`nama_bank` varchar(25)
+,`kd_transaksi` varchar(100)
+,`id_reseller` varchar(255)
+,`tgl_transaksi` date
+,`grand_total` int(11)
+,`bukti_bayar` varchar(255)
+,`tgl_bayar` date
+,`nama_rek_res` varchar(25)
+,`no_rek_res` varchar(25)
+,`status_pesan` enum('0','1')
 );
 
 -- --------------------------------------------------------
@@ -135,7 +155,6 @@ CREATE TABLE `bayar` (
 CREATE TABLE `detail_transaksi` (
   `id_detail` varchar(25) NOT NULL,
   `kd_barang` varchar(255) NOT NULL,
-  `id_reseller` varchar(255) NOT NULL,
   `qty_det` int(11) NOT NULL DEFAULT '1',
   `subtotal` int(11) NOT NULL,
   `status` enum('Added to cart','Pending','PendingB') NOT NULL
@@ -162,14 +181,6 @@ DELIMITER ;
 -- (See below for the actual view)
 --
 CREATE TABLE `dt_trans` (
-`kd_barang` varchar(255)
-,`nama_barang` varchar(50)
-,`harga` int(11)
-,`id_reseller` varchar(255)
-,`nama_reseller` varchar(50)
-,`qty_det` int(11)
-,`subtotal` int(11)
-,`status` enum('Added to cart','Pending','PendingB')
 );
 
 -- --------------------------------------------------------
@@ -9440,9 +9451,16 @@ INSERT INTO `kel` (`kd_kel`, `sys_code`, `kelurahan`, `kode_pos`, `price`, `cepa
 
 CREATE TABLE `kemasan` (
   `id_kemasan` varchar(255) NOT NULL,
-  `kemasan` varchar(255) NOT NULL,
-  `id_varian` varchar(255) NOT NULL
+  `kemasan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kemasan`
+--
+
+INSERT INTO `kemasan` (`id_kemasan`, `kemasan`) VALUES
+('1', 'Box'),
+('2', 'PCS');
 
 -- --------------------------------------------------------
 
@@ -9509,7 +9527,20 @@ CREATE TABLE `transaksi` (
   `kd_transaksi` varchar(100) NOT NULL,
   `tgl_transaksi` date NOT NULL,
   `grand_total` int(11) NOT NULL,
-  `id_detail` varchar(255) NOT NULL
+  `id_detail` varchar(255) NOT NULL,
+  `id_reseller` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_token`
+--
+
+CREATE TABLE `user_token` (
+  `id` int(11) DEFAULT NULL,
+  `email` varchar(125) NOT NULL,
+  `token` varchar(125) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -9522,6 +9553,15 @@ CREATE TABLE `varian` (
   `id_varian` varchar(255) NOT NULL,
   `varian` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `varian`
+--
+
+INSERT INTO `varian` (`id_varian`, `varian`) VALUES
+('0', '-'),
+('1', 'ori'),
+('2', 'coklat');
 
 -- --------------------------------------------------------
 
@@ -9581,14 +9621,15 @@ ALTER TABLE `bank`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`kd_barang`),
-  ADD KEY `kemasan` (`id_kemasan`);
+  ADD KEY `kemasan` (`id_kemasan`),
+  ADD KEY `var` (`id_varian`);
 
 --
 -- Indexes for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail`),
-  ADD KEY `res` (`id_reseller`);
+  ADD KEY `brg` (`kd_barang`);
 
 --
 -- Indexes for table `kab`
@@ -9614,8 +9655,7 @@ ALTER TABLE `kel`
 -- Indexes for table `kemasan`
 --
 ALTER TABLE `kemasan`
-  ADD PRIMARY KEY (`id_kemasan`),
-  ADD KEY `var` (`id_varian`);
+  ADD PRIMARY KEY (`id_kemasan`);
 
 --
 -- Indexes for table `konten`
@@ -9642,7 +9682,8 @@ ALTER TABLE `reseller`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`kd_transaksi`),
-  ADD KEY `det` (`id_detail`);
+  ADD KEY `det` (`id_detail`),
+  ADD KEY `res` (`id_reseller`);
 
 --
 -- Indexes for table `varian`
@@ -9701,13 +9742,14 @@ ALTER TABLE `alamat_kirim`
 -- Constraints for table `barang`
 --
 ALTER TABLE `barang`
-  ADD CONSTRAINT `kemasan` FOREIGN KEY (`id_kemasan`) REFERENCES `kemasan` (`id_kemasan`);
+  ADD CONSTRAINT `kemasan` FOREIGN KEY (`id_kemasan`) REFERENCES `kemasan` (`id_kemasan`),
+  ADD CONSTRAINT `var` FOREIGN KEY (`id_varian`) REFERENCES `varian` (`id_varian`);
 
 --
 -- Constraints for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  ADD CONSTRAINT `res` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
+  ADD CONSTRAINT `brg` FOREIGN KEY (`kd_barang`) REFERENCES `barang` (`kd_barang`);
 
 --
 -- Constraints for table `kec`
@@ -9722,12 +9764,6 @@ ALTER TABLE `kel`
   ADD CONSTRAINT `kec` FOREIGN KEY (`sys_code`) REFERENCES `kec` (`sys_code`);
 
 --
--- Constraints for table `kemasan`
---
-ALTER TABLE `kemasan`
-  ADD CONSTRAINT `var` FOREIGN KEY (`id_varian`) REFERENCES `varian` (`id_varian`);
-
---
 -- Constraints for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
@@ -9738,7 +9774,8 @@ ALTER TABLE `pembayaran`
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `det` FOREIGN KEY (`id_detail`) REFERENCES `detail_transaksi` (`id_detail`);
+  ADD CONSTRAINT `det` FOREIGN KEY (`id_detail`) REFERENCES `detail_transaksi` (`id_detail`),
+  ADD CONSTRAINT `res` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

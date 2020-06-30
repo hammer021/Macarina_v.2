@@ -35,26 +35,71 @@ class produk_model extends CI_Model
 
         ];
     }
+    public function buat_kode(){
+        $this->db->select('RIGHT(barang.kd_barang,3) as kode',FALSE);
+        $this->db->order_by('kd_barang', 'DESC');
+        $this->db->limit(1);
 
+        $query=$this->db->get('barang');
+
+        if ($query->num_rows()<>0) {
+            $data=$query->row();
+            $kode=intval($data->kode)+1;
+        }else{
+            $kode=1;
+        }
+        $kode_max=str_pad($kode,3,"0",STR_PAD_LEFT);
+        $kode_jadi="BR00".$kode_max;
+        return $kode_jadi;
+    }
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $this->db->select('barang.*, kemasan.kemasan, varian.varian');
+        $this->db->from('barang');
+        $this->db->join('kemasan', 'barang.id_kemasan = kemasan.id_kemasan');
+        $this->db->join('varian', 'barang.id_varian = varian.id_varian');
+        $this->db->order_by('barang.kd_barang', 'asc');
+        $income = $this->db->get()->result();
+        return $income;
+      
     }
-    
+    public function getKemasan()
+    {
+        $this->db->select('kemasan.*');
+        $this->db->from('kemasan');
+        $income = $this->db->get()->result();
+        return $income;
+    }
+    public function getVarian()
+    {
+        $this->db->select('varian.*');
+        $this->db->from('varian');
+        $income = $this->db->get()->result();
+        return $income;
+    }
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["kd_barang" => $id])->row();
+        $this->db->select('barang.*, kemasan.kemasan, varian.varian');
+        $this->db->from('barang');
+        $this->db->join('kemasan', 'barang.id_kemasan = kemasan.id_kemasan');
+        $this->db->join('varian', 'barang.id_varian = varian.id_varian');
+        $this->db->where('barang.kd_barang',$id);
+        $income = $this->db->get()->row();
+        return $income;
+        
     }
 
     public function save()
     {
         $post = $this->input->post();
-        $this->kd_barang = uniqid();
+        $this->kd_barang = $this->buat_kode();
         $this->nama_barang = $post["nama_barang"];
         $this->harga = $post["harga"];
         $this->stok = $post["stok"];
         $this->gambar_brg = $this->_uploadImage();
         $this->deskripsi = $post["deskripsi"];
+        $this->id_kemasan = $post["kemasan"];
+        $this->id_varian = $post["varian"];
         return $this->db->insert($this->_table, $this);
     }
     public function update()
@@ -72,6 +117,8 @@ class produk_model extends CI_Model
         }
         
         $this->deskripsi = $post["deskripsi"];
+        $this->id_kemasan = $post["kemasan"];
+        $this->id_varian = $post["varian"];
         return $this->db->update($this->_table, $this, array('kd_barang' => $post['kd_barang']));
     }
     public function delete($id)
