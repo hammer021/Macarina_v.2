@@ -29,8 +29,8 @@ public class HomeFragment extends Fragment {
             R.drawable.person_2
     };
 
-    View view;
-    TextView txtlaporan, txtname;
+    View view, view2;
+    TextView txtlaporan, txtname, txtlokasi;
     authdata authdataa;
 
 
@@ -54,6 +54,22 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent b = new Intent(getContext(), ReportActivity.class);
                 startActivity(b);
+            }
+        });
+        view2 = v.findViewById(R.id.viewLocation);
+        view2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent map = new Intent(getActivity(), MapsActivity.class);
+                startActivity(map);
+            }
+        });
+        txtlokasi = v.findViewById(R.id.textView13);
+        txtlokasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent map2 = new Intent(getActivity(), MapsActivity.class);
+                startActivity(map2);
             }
         });
 

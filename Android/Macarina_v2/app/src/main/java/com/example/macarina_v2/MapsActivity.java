@@ -1,4 +1,4 @@
-package com.example.macarina_v2.configfile;
+package com.example.macarina_v2;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -42,10 +42,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
         LatLng mapkarimata = new LatLng(-8.174065, 113.719192);
         mMap.addMarker(new MarkerOptions().position(mapkarimata).title("Outlet Karimata"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(mapkarimata));
+       // mMap.moveCamera(CameraUpdateFactory.newLatLng(mapkarimata));
 
         LatLng mapkalimantan = new LatLng(-8.166172, 113.711811);
         mMap.addMarker(new MarkerOptions().position(mapkalimantan).title("Outlet Kalimantan"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(mapkalimantan));
+       // mMap.moveCamera(CameraUpdateFactory.newLatLng(mapkalimantan));
     }
 }
