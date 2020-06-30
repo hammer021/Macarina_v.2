@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2020 at 07:51 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Jun 30, 2020 at 01:12 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -54,8 +53,7 @@ CREATE TABLE `alamat_kirim` (
   `id_reseller` varchar(255) NOT NULL,
   `kd_kab` int(11) NOT NULL,
   `sys_code` int(11) NOT NULL,
-  `kd_kel` int(11) NOT NULL,
-  `alamat_lengkap` varchar(25) NOT NULL
+  `kd_kel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -123,8 +121,9 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_barang`, `nama_barang`, `harga`, `stok`, `gambar_brg`, `deskripsi`, `id_kemasan`, `id_varian`) VALUES
-('BR00001', 'Coba', 1000, 10, 'BR00001.jpg', 'coklat enakkk', '2', '2'),
-('BR00002', 'asdas', 1000, 10, 'BR00002.jpg', 'sdfsd', '1', '0');
+('BR00001', 'Paket Box', 1000, 10, 'BR00001.jpg', 'Paket Box Lengkap', '1', '0'),
+('BR00002', 'Original', 1000, 8, 'BR00002.jpg', 'Macarina Shake Coklat', '2', '1'),
+('BR00003', 'Coklat', 2000, 20, 'default.jpg', 'Macarina Shake Ori', '2', '2');
 
 -- --------------------------------------------------------
 
@@ -153,12 +152,22 @@ CREATE TABLE `bayar` (
 --
 
 CREATE TABLE `detail_transaksi` (
-  `id_detail` varchar(25) NOT NULL,
+  `id_detail` int(255) NOT NULL,
   `kd_barang` varchar(255) NOT NULL,
-  `qty_det` int(11) NOT NULL DEFAULT '1',
+  `qty_det` int(11) NOT NULL DEFAULT 1,
   `subtotal` int(11) NOT NULL,
-  `status` enum('Added to cart','Pending','PendingB') NOT NULL
+  `id_reseller` varchar(255) NOT NULL,
+  `status` enum('Added to cart','Pending','PendingB') NOT NULL,
+  `kd_transaksi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detail_transaksi`
+--
+
+INSERT INTO `detail_transaksi` (`id_detail`, `kd_barang`, `qty_det`, `subtotal`, `id_reseller`, `status`, `kd_transaksi`) VALUES
+(6, 'BR00002', 9, 9000, 'RSL000000005', 'Pending', 'TR0000000001'),
+(7, 'BR00002', 2, 2000, 'RSL000000005', 'Pending', 'TR0000000001');
 
 --
 -- Triggers `detail_transaksi`
@@ -173,15 +182,6 @@ CREATE TRIGGER `stokplus` AFTER INSERT ON `detail_transaksi` FOR EACH ROW UPDATE
 WHERE kd_barang = NEW.kd_barang
 $$
 DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `dt_trans`
--- (See below for the actual view)
---
-CREATE TABLE `dt_trans` (
-);
 
 -- --------------------------------------------------------
 
@@ -9505,7 +9505,7 @@ CREATE TABLE `reseller` (
   `scan_ktp` varchar(255) NOT NULL DEFAULT 'default.jpg',
   `no_ktp` varchar(16) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(8) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `status` varchar(10) NOT NULL DEFAULT '0',
   `pas_foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -9515,7 +9515,8 @@ CREATE TABLE `reseller` (
 --
 
 INSERT INTO `reseller` (`id_reseller`, `nama_reseller`, `alamat`, `no_tlp`, `scan_ktp`, `no_ktp`, `email`, `password`, `status`, `pas_foto`) VALUES
-('5eb2a414c19c7', 'ham', 'bwi', '0000', '5eb2a414c19c7.jpg', '1111', 'ham21@gmail.com', '1', '1', '5eb2a414c19c7.jpg');
+('5eb2a414c19c7', 'ham', 'bwi', '0000', '5eb2a414c19c7.jpg', '1111', 'ham21@gmail.com', '1', '1', '5eb2a414c19c7.jpg'),
+('RSL000000005', 'padadang', 'Jember', '089693556052', '5ef9743e92d2a.jpeg', '2001', 'l@gmail.com', '202cb962ac59075b964b07152d234b70', '1', '5ef9743e92d2f.jpeg');
 
 -- --------------------------------------------------------
 
@@ -9527,9 +9528,17 @@ CREATE TABLE `transaksi` (
   `kd_transaksi` varchar(100) NOT NULL,
   `tgl_transaksi` date NOT NULL,
   `grand_total` int(11) NOT NULL,
-  `id_detail` varchar(255) NOT NULL,
-  `id_reseller` varchar(255) NOT NULL
+  `id_reseller` varchar(255) NOT NULL,
+  `bukti_bayar` varchar(255) DEFAULT NULL,
+  `status_bayar` enum('sudah_bayar','belum_bayar') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`kd_transaksi`, `tgl_transaksi`, `grand_total`, `id_reseller`, `bukti_bayar`, `status_bayar`) VALUES
+('TR0000000001', '2020-06-30', 11000, 'RSL000000005', NULL, 'belum_bayar');
 
 -- --------------------------------------------------------
 
@@ -9538,10 +9547,17 @@ CREATE TABLE `transaksi` (
 --
 
 CREATE TABLE `user_token` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `email` varchar(125) NOT NULL,
   `token` varchar(125) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_token`
+--
+
+INSERT INTO `user_token` (`id`, `email`, `token`) VALUES
+(2, 'l@gmail.com', '15ef973f547d5a');
 
 -- --------------------------------------------------------
 
@@ -9570,7 +9586,7 @@ INSERT INTO `varian` (`id_varian`, `varian`) VALUES
 --
 DROP TABLE IF EXISTS `alamat_send`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `alamat_send`  AS  select `ak`.`id_reseller` AS `id_reseller`,`res`.`nama_reseller` AS `nama_reseller`,`ak`.`kd_kab` AS `kd_kab`,`kab`.`provinsi` AS `provinsi`,`kab`.`kab_kota` AS `kab_kota`,`ak`.`sys_code` AS `sys_code`,`kec`.`kecamatan` AS `kecamatan`,`ak`.`kd_kel` AS `kd_kel`,`kel`.`kelurahan` AS `kelurahan`,`kel`.`kode_pos` AS `kode_pos`,`kel`.`price` AS `price`,`kel`.`cepat` AS `cepat`,`kel`.`lama` AS `lama` from ((((`alamat_kirim` `ak` join `reseller` `res` on((`ak`.`id_reseller` = `res`.`id_reseller`))) join `kab` on((`ak`.`kd_kab` = `kab`.`kd_kab`))) join `kec` on((`ak`.`sys_code` = `kec`.`sys_code`))) join `kel` on((`ak`.`kd_kel` = `kel`.`kd_kel`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `alamat_send`  AS  select `ak`.`id_reseller` AS `id_reseller`,`res`.`nama_reseller` AS `nama_reseller`,`ak`.`kd_kab` AS `kd_kab`,`kab`.`provinsi` AS `provinsi`,`kab`.`kab_kota` AS `kab_kota`,`ak`.`sys_code` AS `sys_code`,`kec`.`kecamatan` AS `kecamatan`,`ak`.`kd_kel` AS `kd_kel`,`kel`.`kelurahan` AS `kelurahan`,`kel`.`kode_pos` AS `kode_pos`,`kel`.`price` AS `price`,`kel`.`cepat` AS `cepat`,`kel`.`lama` AS `lama` from ((((`alamat_kirim` `ak` join `reseller` `res` on(`ak`.`id_reseller` = `res`.`id_reseller`)) join `kab` on(`ak`.`kd_kab` = `kab`.`kd_kab`)) join `kec` on(`ak`.`sys_code` = `kec`.`sys_code`)) join `kel` on(`ak`.`kd_kel` = `kel`.`kd_kel`)) ;
 
 -- --------------------------------------------------------
 
@@ -9579,16 +9595,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `bayar`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `bayar`  AS  select `pm`.`id_bank` AS `id_bank`,`bank`.`nama_bank` AS `nama_bank`,`pm`.`kd_transaksi` AS `kd_transaksi`,`tr`.`id_reseller` AS `id_reseller`,`tr`.`tgl_transaksi` AS `tgl_transaksi`,`tr`.`grand_total` AS `grand_total`,`pm`.`bukti_bayar` AS `bukti_bayar`,`pm`.`tgl_bayar` AS `tgl_bayar`,`pm`.`nama_rek_res` AS `nama_rek_res`,`pm`.`no_rek_res` AS `no_rek_res`,`pm`.`status_pesan` AS `status_pesan` from ((`pembayaran` `pm` join `bank` on((`pm`.`id_bank` = `bank`.`id_bank`))) join `transaksi` `tr` on((`pm`.`kd_transaksi` = `tr`.`kd_transaksi`))) ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `dt_trans`
---
-DROP TABLE IF EXISTS `dt_trans`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dt_trans`  AS  select `dt`.`kd_barang` AS `kd_barang`,`brg`.`nama_barang` AS `nama_barang`,`brg`.`harga` AS `harga`,`dt`.`id_reseller` AS `id_reseller`,`res`.`nama_reseller` AS `nama_reseller`,`dt`.`qty_det` AS `qty_det`,`dt`.`subtotal` AS `subtotal`,`dt`.`status` AS `status` from ((`detail_transaksi` `dt` join `barang` `brg` on((`dt`.`kd_barang` = `brg`.`kd_barang`))) join `reseller` `res` on((`dt`.`id_reseller` = `res`.`id_reseller`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `bayar`  AS  select `pm`.`id_bank` AS `id_bank`,`bank`.`nama_bank` AS `nama_bank`,`pm`.`kd_transaksi` AS `kd_transaksi`,`tr`.`id_reseller` AS `id_reseller`,`tr`.`tgl_transaksi` AS `tgl_transaksi`,`tr`.`grand_total` AS `grand_total`,`pm`.`bukti_bayar` AS `bukti_bayar`,`pm`.`tgl_bayar` AS `tgl_bayar`,`pm`.`nama_rek_res` AS `nama_rek_res`,`pm`.`no_rek_res` AS `no_rek_res`,`pm`.`status_pesan` AS `status_pesan` from ((`pembayaran` `pm` join `bank` on(`pm`.`id_bank` = `bank`.`id_bank`)) join `transaksi` `tr` on(`pm`.`kd_transaksi` = `tr`.`kd_transaksi`)) ;
 
 --
 -- Indexes for dumped tables
@@ -9608,7 +9615,7 @@ ALTER TABLE `alamat_kirim`
   ADD KEY `kabb` (`kd_kab`),
   ADD KEY `kecc` (`sys_code`),
   ADD KEY `kell` (`kd_kel`),
-  ADD KEY `res2` (`id_reseller`);
+  ADD KEY `resny` (`id_reseller`);
 
 --
 -- Indexes for table `bank`
@@ -9629,7 +9636,8 @@ ALTER TABLE `barang`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_detail`),
-  ADD KEY `brg` (`kd_barang`);
+  ADD KEY `brg` (`kd_barang`),
+  ADD KEY `ressss` (`id_reseller`);
 
 --
 -- Indexes for table `kab`
@@ -9682,8 +9690,13 @@ ALTER TABLE `reseller`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`kd_transaksi`),
-  ADD KEY `det` (`id_detail`),
   ADD KEY `res` (`id_reseller`);
+
+--
+-- Indexes for table `user_token`
+--
+ALTER TABLE `user_token`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `varian`
@@ -9714,6 +9727,12 @@ ALTER TABLE `bank`
   MODIFY `id_bank` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `detail_transaksi`
+--
+ALTER TABLE `detail_transaksi`
+  MODIFY `id_detail` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `konten`
 --
 ALTER TABLE `konten`
@@ -9726,6 +9745,12 @@ ALTER TABLE `pembayaran`
   MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `user_token`
+--
+ALTER TABLE `user_token`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -9736,7 +9761,7 @@ ALTER TABLE `alamat_kirim`
   ADD CONSTRAINT `kabb` FOREIGN KEY (`kd_kab`) REFERENCES `kab` (`kd_kab`),
   ADD CONSTRAINT `kecc` FOREIGN KEY (`sys_code`) REFERENCES `kec` (`sys_code`),
   ADD CONSTRAINT `kell` FOREIGN KEY (`kd_kel`) REFERENCES `kel` (`kd_kel`),
-  ADD CONSTRAINT `res2` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
+  ADD CONSTRAINT `resny` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 
 --
 -- Constraints for table `barang`
@@ -9749,7 +9774,8 @@ ALTER TABLE `barang`
 -- Constraints for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  ADD CONSTRAINT `brg` FOREIGN KEY (`kd_barang`) REFERENCES `barang` (`kd_barang`);
+  ADD CONSTRAINT `brg` FOREIGN KEY (`kd_barang`) REFERENCES `barang` (`kd_barang`),
+  ADD CONSTRAINT `ressss` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 
 --
 -- Constraints for table `kec`
@@ -9774,7 +9800,6 @@ ALTER TABLE `pembayaran`
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `det` FOREIGN KEY (`id_detail`) REFERENCES `detail_transaksi` (`id_detail`),
   ADD CONSTRAINT `res` FOREIGN KEY (`id_reseller`) REFERENCES `reseller` (`id_reseller`);
 COMMIT;
 
