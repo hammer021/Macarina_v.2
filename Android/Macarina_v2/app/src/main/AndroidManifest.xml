@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -36,7 +37,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".configfile.MapsActivity"
+            android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <activity android:name=".ActivityCheckout" />
         <activity android:name=".ActivityOrderPack" />
