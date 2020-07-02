@@ -18,28 +18,19 @@ class Transaksi extends CI_Controller
     }
 
     
-    // public function edit($id_reseller = null)
-    // {
+    public function tampil($kd = null)
+    {
        
-    //     if (!isset($id_reseller)) redirect('Reseller');
+        if (!isset($kd)) redirect('Transaksi');
        
-    //     $reseller = $this->reseller_model;
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($reseller->rules());
-
-    //     if ($validation->run()) {
-    //         $reseller->update();
-    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
-    //         redirect(site_url('Reseller'));
-    //     }
-
-    //     $data["reseller"] = $reseller->getById($id_reseller);
-    //     if (!$data["reseller"]) show_404();
+        $transaksi = $this->transaksi_model;
+        $data["dettransaksi"] = $transaksi->getDataDetail($kd);
+        $data["transaksi"] = $transaksi->getDataTrans($kd);
         
-    //     $this->load->view("modal/edit_reseller", $data);
+        $this->load->view("modal/detail_transaksi", $data);
                    
         
-    // }
+    }
   
     public function delete($id=null)
     {

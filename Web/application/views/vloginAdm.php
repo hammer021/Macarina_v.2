@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Login Admin</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-<link rel="shortcut icon"  href="<?php echo base_url('theme-assets/images/ico/logos.png')?>">
+<link rel="shortcut icon"  href="<?php echo base_url('theme-assets/images/logo/logom.png')?>">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("alogin/vendor/bootstrap/css/bootstrap.min.css")?>">
 <!--===============================================================================================-->

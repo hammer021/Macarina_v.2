@@ -5,6 +5,6 @@
 
        function daftar($data)
        {
-            $this->db->insert('users',$data);
+            $this->db->insert('reseller',$data);
        }
   }

@@ -58,14 +58,13 @@ class DetTrans extends REST_Controller{
         
         $this->response($response, 200);
     }
-
     public function index_get()
     {
         $id = $this->get('id_reseller');
         if ($id === null || $id === ''){
             $this->response([
                 'status' => FALSE,
-                'message' => 'Masukkan Email Anda'
+                'message' => 'Data tidak dapat ditampilkan'
             ], REST_Controller::HTTP_NOT_FOUND);
         }else{
             $riwayat = $this->a->getDataDetTrans($id);

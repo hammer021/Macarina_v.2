@@ -33,10 +33,15 @@ class Home extends CI_Controller {
 	
 	public function shop()
     {
-        $this->load->view('vshop');
+        redirect(site_url("Shop"));
 	}
 	public function kontak()
     {
         $this->load->view('vkontak');
 	}
+	public function Keranjang()
+    {
+        redirect(site_url("Keranjang"));
+	}
+
 }

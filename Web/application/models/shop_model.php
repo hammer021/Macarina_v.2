@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class produk_model extends CI_Model
+class shop_model extends CI_Model
 {
     private $_table = "barang";
 
@@ -38,63 +38,23 @@ class produk_model extends CI_Model
 
     public function getAll()
     {
-        $this->db->select('barang.*, kemasan.kemasan,varian.varian');
-        $this->db->from('barang');
-        $this->db->join('kemasan', 'barang.id_kemasan=kemasan.id_kemasan');
-        $this->db->join('varian', 'barang.id_varian=varian.id_varian');
-        $query = $this->db->get()->result();
-        return $query;
-
+        return $this->db->get($this->_table)->result();
     }
-    public function getKemasan()
-    {
-        $this->db->select('kemasan.*');
-        $this->db->from('kemasan');
-        $query = $this->db->get()->result();
-        return $query;
-
-    }
-    public function getVarian()
-    {
-        $this->db->select('varian.*');
-        $this->db->from('varian');
-        $query = $this->db->get()->result();
-        return $query;
-
-    }
+    
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["kd_barang" => $id])->row();
     }
-    public function buat_kode(){
-        $this->db->select('RIGHT(barang.kd_barang,2) as kode',FALSE);
-        $this->db->order_by('kd_barang', 'DESC');
-        $this->db->limit(1);
 
-        $query=$this->db->get('barang');
-
-        if ($query->num_rows()<>0) {
-            $data=$query->row();
-            $kode=intval($data->kode)+1;
-        }else{
-            $kode=1;
-        }
-        $kode_max=str_pad($kode,2,"0",STR_PAD_LEFT);
-        $kode_jadi="BR00".$kode_max;
-        return $kode_jadi;
-    }
     public function save()
     {
-      
         $post = $this->input->post();
-        $this->kd_barang = $this->buat_kode();
+        $this->kd_barang = uniqid();
         $this->nama_barang = $post["nama_barang"];
         $this->harga = $post["harga"];
         $this->stok = $post["stok"];
         $this->gambar_brg = $this->_uploadImage();
         $this->deskripsi = $post["deskripsi"];
-        $this->id_kemasan = $post["kemasan"];
-        $this->id_varian = $post["varian"];
         return $this->db->insert($this->_table, $this);
     }
     public function update()
@@ -128,7 +88,7 @@ class produk_model extends CI_Model
     $config['max_size']             = 5120;
 
     // $config['max_width']            = 1024;
-    // $config['max_\\\\\
+    // $config['max_height']           = 768;
 
     $this->load->library('upload', $config);
 
