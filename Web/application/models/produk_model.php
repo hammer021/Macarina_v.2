@@ -91,6 +91,7 @@ class produk_model extends CI_Model
         $this->nama_barang = $post["nama_barang"];
         $this->harga = $post["harga"];
         $this->stok = $post["stok"];
+        $this->weight = $post["weight"];
         $this->gambar_brg = $this->_uploadImage();
         $this->deskripsi = $post["deskripsi"];
         $this->id_kemasan = $post["kemasan"];
@@ -104,7 +105,7 @@ class produk_model extends CI_Model
         $this->nama_barang = $post["nama_barang"];
         $this->harga = $post["harga"];
         $this->stok = $post["stok"];
-        
+        $this->weight = $post["weight"];
         if (!empty($_FILES["gambar"]["name"])) {
             $this->gambar_brg = $this->_uploadImage();
         } else {

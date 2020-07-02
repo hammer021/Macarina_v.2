@@ -59,6 +59,7 @@ class transaksi_model extends CI_Model
     public function delete($id)
     {
        
+        return $this->db->delete($this->_table, array("detail_transaksi" => $id));
         return $this->db->delete($this->_table, array("kd_transaksi" => $id));
     }
     
