@@ -76,7 +76,7 @@
 
                         <div class="form-group">
                             <label for="name">Scan KTP</label>
-                            <?php echo "<img src='./theme-assets/images/reseller/scan/".$reseller->scan_ktp."' width='100px' height='100px'/>"?>
+                            <?php echo "<img src='./uploads/reseller/scan_ktp/".$reseller->scan_ktp."' width='100px' height='100px'/>"?>
                             
                             <input type="file" name="scan_ktp" class="form-control <?php echo form_error('scan_ktp') ? 'is-invalid':'' ?>">
                             
@@ -115,7 +115,7 @@
 
                         <div class="form-group">
                             <label for="name">Pas Foto</label>
-                            <?php echo "<img src='./theme-assets/images/reseller/pas/".$reseller->pas_foto."' width='100px' height='100px'/>"?>
+                            <?php echo "<img src='./uploads/reseller/pas_foto/".$reseller->pas_foto."' width='100px' height='100px'/>"?>
                             
                             <input type="file" name="pas_foto" class="form-control <?php echo form_error('pas_foto') ? 'is-invalid':'' ?>">
                             

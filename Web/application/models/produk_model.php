@@ -122,7 +122,7 @@ class produk_model extends CI_Model
     }
     private function _uploadImage()
     {
-    $config['upload_path']          = './theme-assets/images/barang/';
+    $config['upload_path']          = './uploads/barang/';
     $config['allowed_types']        = 'gif|jpg|png';
     $config['file_name']            = $this->kd_barang;
     $config['overwrite']			= true;
@@ -145,7 +145,7 @@ private function _deleteImage($id)
     $product = $this->getById($id);
     if ($product->gambar_brg != "default.jpg") {
 	    $filename = explode(".", $product->gambar_brg)[0];
-		return array_map('unlink', glob(FCPATH."theme-assets/images/barang/$filename.*"));
+		return array_map('unlink', glob(FCPATH."uploads/barang/$filename.*"));
     }
 }
 }

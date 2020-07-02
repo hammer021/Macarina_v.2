@@ -87,7 +87,7 @@ class reseller_model extends CI_Model
     }
     private function _uploadScan()
     {
-    $config['upload_path']          = './theme-assets/images/reseller/scan/';
+    $config['upload_path']          = './uploads/reseller/scan_ktp/';
     $config['allowed_types']        = 'gif|jpg|png';
     $config['file_name']            = $this->id_reseller;
     $config['overwrite']			= true;
@@ -104,7 +104,7 @@ class reseller_model extends CI_Model
 
 private function _uploadPas()
 {
-$config['upload_path']          = './theme-assets/images/reseller/pas/';
+$config['upload_path']          = './uploads/reseller/pas_foto/';
 $config['allowed_types']        = 'gif|jpg|png';
 $config['file_name']            = $this->id_reseller;
 $config['overwrite']			= true;
@@ -124,7 +124,7 @@ private function _deleteScan($id)
     $product = $this->getById($id);
     if ($product->scan_ktp != "default.jpg") {
 	    $filename = explode(".", $product->scan_ktp)[0];
-		return array_map('unlink', glob(FCPATH."theme-assets/images/reseller/scan/$filename.*"));
+		return array_map('unlink', glob(FCPATH."uploads/reseller/scan_ktp/$filename.*"));
     }
 }
 
@@ -133,7 +133,7 @@ private function _deletePas($id)
     $product = $this->getById($id);
     if ($product->pas_foto != "default.jpg") {
 	    $filename = explode(".", $product->pas_foto)[0];
-		return array_map('unlink', glob(FCPATH."theme-assets/images/reseller/pas/$filename.*"));
+		return array_map('unlink', glob(FCPATH."uploads/images/reseller/pas_foto/$filename.*"));
     }
 }
 }

@@ -75,7 +75,7 @@
 											<?php echo $produk->weight?> gr
 										</td>
                     <td>
-                    <?php echo "<img src='./theme-assets/images/barang/".$produk->gambar_brg."'  width='100px' height='100px'/>" ?>
+                    <?php echo "<img src='./uploads/barang/".$produk->gambar_brg."'  width='100px' height='100px'/>" ?>
 											
 										</td>
                     <td>
