@@ -6,7 +6,14 @@ class Det_model extends CI_Model
 
     public function getDataDetTrans($id = null)
     {
-            return $this->db->get_where('detail_transaksi' , ['id_reseller' => $id])->result_array();
+        $this->db->select('detail_transaksi.*, reseller.nama_reseller, barang.nama_barang, barang.harga');
+        $this->db->from('detail_transaksi');
+        $this->db->join('reseller', 'detail_transaksi.id_reseller = reseller.id_reseller');
+        $this->db->join('barang', 'detail_transaksi.kd_barang = barang.kd_barang');
+        $this->db->where('detail_transaksi.status', 'Added to cart');
+        $this->db->where('detail_transaksi.id_reseller', $id);
+        $income = $this->db->get()->result_array();
+        return $income;
     }
     
     public function insert($tabel, $arr)
