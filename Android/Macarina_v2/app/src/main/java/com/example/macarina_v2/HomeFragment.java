@@ -32,6 +32,7 @@ public class HomeFragment extends Fragment {
     View view, view2;
     TextView txtlaporan, txtname, txtlokasi;
     authdata authdataa;
+    ImageView order1, carts, order2;
 
 
     @Nullable
@@ -40,6 +41,34 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.activity_home_fragment, container, false);
         carouselView = v.findViewById(R.id.Banner);
         carouselView.setPageCount(sampleImage.length);
+
+        carts = v.findViewById(R.id.Cart);
+        carts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cartsss = new Intent(getContext(), ActivityCart.class);
+                startActivity(cartsss);
+            }
+        });
+
+        order1 = v.findViewById(R.id.imageorder1);
+        order1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ord = new Intent(getContext(), ActivityPilihVarian.class);
+                startActivity(ord);
+            }
+        });
+
+        order2 = v.findViewById(R.id.imageorder2);
+        order2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ord2 = new Intent(getContext(), ActivityCheckoutBox.class);
+                startActivity(ord2);
+            }
+        });
+
         view = v.findViewById(R.id.viewLaporan);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +101,6 @@ public class HomeFragment extends Fragment {
                 startActivity(map2);
             }
         });
-
         authdataa = new authdata(getContext());
         txtname = v.findViewById(R.id.tName);
         txtname.setText(authdataa.getNamaUser());

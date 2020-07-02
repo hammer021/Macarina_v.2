@@ -1,7 +1,11 @@
 package com.example.macarina_v2.configfile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+
+import com.example.macarina_v2.LoginActivity;
+import com.example.macarina_v2.MainActivity;
 
 public class authdata {
 //    private static authdata mInstance;
@@ -15,6 +19,7 @@ public class authdata {
     private static final String kode_user = "id_reseller";
     private static final String nama_user = "nama_reseller";
     private static final String akses_data = "akses_data";
+    private static final String foto_user = "pas_foto";
     private static final String status_user = "status";
     private static final String token = "token";
     public static final String LOGIN_STATUS = "LOGIN_STATUS";
@@ -27,7 +32,7 @@ public class authdata {
         editor = sharedPreferences.edit();
     }
 
-    public void setdatauser(String xstatus, String xkode_user, String xnama_user, String tokennya){
+    public void setdatauser(String xstatus, String xkode_user, String xnama_user, String tokennya, String xfoto){
 //        sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
 //        editor = sharedPreferences.edit();
 
@@ -37,6 +42,7 @@ public class authdata {
         editor.putString(status_user, xstatus);
         editor.putString(sudahlogin, "y");
         editor.putString(token, tokennya);
+        editor.putString(foto_user, xfoto);
         editor.apply();
     }
 
@@ -47,12 +53,13 @@ public class authdata {
         return sharedPreferences.getBoolean(LOGIN_STATUS, false);
     }
 
-    public boolean logout(){
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+    public void logout(){
         editor.clear();
-        editor.apply();
-        return true;
+        editor.commit();
+
+        Intent login = new Intent(mCtx, LoginActivity.class);
+        mCtx.startActivity(login);
+        ((MainActivity)mCtx).finish();
     }
 
     public String getToken() {
@@ -68,4 +75,8 @@ public class authdata {
     public String getNamaUser() {
         return sharedPreferences.getString(nama_user, null);
     }
+    public String getFoto_user() {
+        return sharedPreferences.getString(foto_user, null);
+    }
+
 }

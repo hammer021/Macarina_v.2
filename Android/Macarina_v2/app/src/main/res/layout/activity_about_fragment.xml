@@ -26,17 +26,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/profil"/>
 
-                <TextView
-                    android:id="@+id/tTeam"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:padding="20dp"
-                    android:text="OUR TEAM FOUNDER"
-                    android:textColor="@color/background1"
-                    android:fontFamily="@font/segoe_ui_bold"
-                    android:gravity="center"
-                    app:layout_constraintTop_toBottomOf="@+id/iFoto"/>
+            <TextView
+                android:id="@+id/tTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="20dp"
+                android:text="OUR TEAM FOUNDER"
+                android:textColor="@color/background1"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/iFoto"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/Person1"
@@ -129,7 +129,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
+                android:layout_marginStart="70dp"
                 android:fontFamily="sans-serif"
                 android:text="Direktur Operasioanl"
                 android:textColor="@color/colorGrey"
@@ -163,7 +163,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="122dp"
+                android:layout_marginStart="120dp"
                 android:fontFamily="sans-serif"
                 android:text="Marketing"
                 android:textColor="@color/colorGrey"
@@ -196,7 +196,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="72dp"
+                android:layout_marginStart="64dp"
                 android:fontFamily="sans-serif"
                 android:text="Direktur Produksi"
                 android:textColor="@color/colorGrey"
@@ -279,29 +279,34 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:id="@+id/misi1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/misi"
                     android:layout_below="@id/tMisi"/>
                 <TextView
+                    android:id="@+id/misi2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+
                     android:text="@string/misi1"
-                    android:layout_below="@id/tMisi"/>
+                    android:layout_below="@id/misi1"/>
                 <TextView
+                    android:id="@+id/misi3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/misi2"
-                    android:layout_below="@id/tMisi"/>
+                    android:layout_below="@id/misi2"/>
                 <TextView
+                    android:id="@+id/misi4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/misi3"
-                    android:layout_below="@id/tMisi"/>
+                    android:layout_below="@id/misi3"/>
 
             </RelativeLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

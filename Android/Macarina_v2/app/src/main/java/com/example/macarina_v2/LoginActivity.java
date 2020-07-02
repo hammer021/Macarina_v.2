@@ -95,7 +95,8 @@ public class LoginActivity extends AppCompatActivity {
                             datalogin.getString("status"),
                             datalogin.getString("id_reseller"),
                             datalogin.getString("nama_reseller"),
-                            datalogin.getString("token")
+                            datalogin.getString("token"),
+                            datalogin.getString("pas_foto")
                     );
 //                    nama_user = datalogin.getString("nama_reseller");
 //                    Log.e("Nama" , "user" + nama_user);

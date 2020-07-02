@@ -24,12 +24,4 @@
         4. Selalu menjaga kualitas produk dengan bahan baku yang bersertifikasi dan mengontrol proses produksi sesuai SOP
     </string>
     <string name="title_activity_maps">Map</string>
-
-    <string-array name="numbers">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
-        <item>Four</item>
-        <item>Five</item>
-    </string-array>
 </resources>

@@ -33,8 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
     TextView masuk;
     EditText nama, password, password2, email, no_telepon;
     Button buttonDaftar;
-    Boolean CheckEditText;
-    String NameHolder, EmailHolder, PasswordHolder, NoTlpHolder, PasswordHolder2;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
     ProgressBar progressBar;
