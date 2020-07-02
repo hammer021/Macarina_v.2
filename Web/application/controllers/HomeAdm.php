@@ -13,7 +13,12 @@ class HomeAdm extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('vHomeAdm');
+		$this->load->model('reseller_model');
+		$this->load->model('produk_model');
+		
+		$data["res"] = $this->reseller_model->getAll();
+		$data["barangs"] = $this->produk_model->getAll();
+		$this->load->view('vHomeAdm',$data);
     }
     
     public function barang()
