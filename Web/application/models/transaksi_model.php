@@ -22,7 +22,7 @@ class transaksi_model extends CI_Model
         $this->db->from('transaksi');
         $this->db->join('reseller', 'transaksi.id_reseller = reseller.id_reseller');
         $this->db->order_by('transaksi.tgl_transaksi', 'desc');
-
+        $this->db->order_by('transaksi.status_bayar', 'asc');
         $income = $this->db->get()->result();
         return $income;
     }
@@ -49,6 +49,12 @@ class transaksi_model extends CI_Model
         return $income;
     }
 
+    public function updateBayar($id)
+    {
+        $status= "sudah_bayar";
+        return $this->db->update($this->_table, array('status_bayar' => $status), array('kd_transaksi' => $id));
+        
+    }
     
     public function delete($id)
     {

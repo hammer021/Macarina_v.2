@@ -22,15 +22,9 @@
           echo 'active';
           else
           echo 'nav-item'; ?>">
-          <a href="<?php echo base_url('HomeAdm/index')?>"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+          <a href="<?php echo base_url('HomeAdm')?>"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
           </li>
-          <li class="<?php
-          if($url == "localhost/Macarina_v.2/Web/Home/charts")
-          echo 'active';
-          else
-          echo 'nav-item';
-           ?>"><a href="<?php echo base_url('HomeAdm/charts')?>"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Charts</span></a>
-          </li>
+          
           <li class="<?php
           if($url == "localhost/Macarina_v.2/Web/HomeAdm/barang")
           echo 'active';

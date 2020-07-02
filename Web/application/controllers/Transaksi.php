@@ -31,7 +31,13 @@ class Transaksi extends CI_Controller
                    
         
     }
-  
+  public function bayar($id = null)
+  {
+      $trans=$this->transaksi_model->updateBayar($id);
+        
+      redirect(site_url('Transaksi'));
+
+  }
     public function delete($id=null)
     {
         if (!isset($id)) show_404();
