@@ -83,7 +83,7 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Gambar</label>
-                            <?php echo "<img src='./theme-assets/images/barang/".$barang->gambar_brg."' width='100px' height='100px'/>"?>
+                            <?php echo "<img src='./uploads/barang/".$barang->gambar_brg."' width='100px' height='100px'/>"?>
                             
                             <input type="file" name="gambar" class="form-control <?php echo form_error('gambar') ? 'is-invalid':'' ?>">
                             
