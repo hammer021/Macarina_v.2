@@ -30,7 +30,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ActivityCheckout extends AppCompatActivity {
+public class ActivityCheckoutBox extends AppCompatActivity {
     ImageView gambarbarange;
     RequestQueue requestQueue;
     authdata authdataa;
@@ -47,36 +47,35 @@ public class ActivityCheckout extends AppCompatActivity {
     String mPathGambar;
     String mKodeBarang;
     String mIdReseller;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout);
+        setContentView(R.layout.activity_checkout_box);
 
         authdataa = new authdata(this);
         requestQueue = Volley.newRequestQueue(this);
 
         mIdReseller = authdataa.getKodeUser();
 
-        gambarbarange = findViewById(R.id.imgGambarbrg);
-        nmbrg = findViewById(R.id.textbarang);
-        hrg = findViewById(R.id.textharga);
-        stk = findViewById(R.id.textstok);
+        gambarbarange = findViewById(R.id.imgGambarbrg2);
+        nmbrg = findViewById(R.id.textbarang2);
+        hrg = findViewById(R.id.textharga2);
+        stk = findViewById(R.id.textstok2);
 
-        btnsave = findViewById(R.id.addcart);
+        btnsave = findViewById(R.id.addcart2);
 
         btnkembali = findViewById(R.id.backhome);
         btnkembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent tosoon = new Intent(ActivityCheckout.this, ActivityPilihVarian.class);
+                Intent tosoon = new Intent(ActivityCheckoutBox.this, MainActivity.class);
                 startActivity(tosoon);
                 finish();
             }
         });
 
-        dskrpsi = findViewById(R.id.textdeskripsinya);
-        qty = findViewById(R.id.qtytrans);
+        dskrpsi = findViewById(R.id.textdeskripsinya2);
+        qty = findViewById(R.id.qtytrans2);
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +91,7 @@ public class ActivityCheckout extends AppCompatActivity {
 
     private void loadBarang()
     {
-        StringRequest brgload = new StringRequest(Request.Method.GET, ServerApi.URL_BRGORI, new Response.Listener<String>() {
+        StringRequest brgload = new StringRequest(Request.Method.GET, ServerApi.URL_BRGBOX, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -120,13 +119,13 @@ public class ActivityCheckout extends AppCompatActivity {
                         mPathGambar = ServerApi.URL_GAMBARBRG + mGambar;
                     }
                 } catch (Exception e) {
-                    Toast.makeText(ActivityCheckout.this, e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityCheckoutBox.this, e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ActivityCheckout.this, error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityCheckoutBox.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
         requestQueue.add(brgload);
@@ -146,22 +145,22 @@ public class ActivityCheckout extends AppCompatActivity {
                     String message = objecttmbh.getString("message");
 
                     if (status.equals("200") && error.equals("false")) {
-                        Toast.makeText(ActivityCheckout.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityCheckoutBox.this, message, Toast.LENGTH_SHORT).show();
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
 
-                                Intent intent2 = new Intent(ActivityCheckout.this, MainActivity.class);
+                                Intent intent2 = new Intent(ActivityCheckoutBox.this, MainActivity.class);
                                 startActivity(intent2);
                             }
                         }, 1500);
 
                     } else {
-                        Toast.makeText(ActivityCheckout.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityCheckoutBox.this, message, Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Intent intent3 = new Intent(ActivityCheckout.this, MainActivity.class);
+                    Intent intent3 = new Intent(ActivityCheckoutBox.this, MainActivity.class);
                     startActivity(intent3);
                     Toast.makeText(getApplicationContext(), "Berhasil menambahkan barang di Keranjang.", Toast.LENGTH_LONG).show();
                 }
@@ -169,7 +168,7 @@ public class ActivityCheckout extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ActivityCheckout.this, error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityCheckoutBox.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
