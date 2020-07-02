@@ -7,7 +7,24 @@ class Trans_model extends CI_Model {
     {
             return $this->db->get_where('transaksi' , ['id_reseller' => $id])->result_array();
     }
-
+    public function getDataTransbelum($id = null)
+    {
+        $this->db->select('transaksi.*');
+        $this->db->from('transaksi');
+        $this->db->where('transaksi.status_bayar', 'belum_bayar');
+        $this->db->where('transaksi.id_reseller', $id);
+        $income = $this->db->get()->result_array();
+        return $income;
+    }
+    public function getDataTranssudah($id = null)
+    {
+        $this->db->select('transaksi.*');
+        $this->db->from('transaksi');
+        $this->db->where('transaksi.status_bayar', 'sudah_bayar');
+        $this->db->where('transaksi.id_reseller', $id);
+        $income = $this->db->get()->result_array();
+        return $income;
+    }
     public function insert($tabel, $arr)
     {
         return $this->db->insert($tabel, $arr);

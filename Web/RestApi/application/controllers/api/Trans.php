@@ -27,6 +27,38 @@ class Trans extends REST_Controller {
             ], REST_Controller::HTTP_OK);
         }
     }
+    public function transBelum_get()
+    {
+        $id = $this->get('id_reseller');
+        if ($id === null || $id === ''){
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Masukkan Email Anda'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }else{
+            $riwayat = $this->a->getDataTransbelum($id);
+            $this->response([
+                'status' => TRUE,
+                'data' => $riwayat
+            ], REST_Controller::HTTP_OK);
+        }
+    }
+    public function transSudah_get()
+    {
+        $id = $this->get('id_reseller');
+        if ($id === null || $id === ''){
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Masukkan Email Anda'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }else{
+            $riwayat = $this->a->getDataTranssudah($id);
+            $this->response([
+                'status' => TRUE,
+                'data' => $riwayat
+            ], REST_Controller::HTTP_OK);
+        }
+    }
     public function berat_get()
     {
         $id = $this->get('id_reseller');
@@ -64,10 +96,6 @@ class Trans extends REST_Controller {
     {
         
         $id_reseller = $this->input->post('id_reseller');
-        $cost = $this->input->post('cost');
-        $total_pembayaran = $this->input->post('total_pembayaran');
-        //$alkirim = $this->input->post('kd_al_kirim');
-       // $bank = $this->input->post('id_bank');
         $kd_transaksi = $this->a->buat_kode();
         $grand= $this->a->getDataGrandTotal($id_reseller);
         $a=$grand['total'];
@@ -76,8 +104,6 @@ class Trans extends REST_Controller {
             'kd_transaksi' => $kd_transaksi,
             'tgl_transaksi' => date('Y-m-d'),
             'grand_total' => $a,
-            'cost' => $cost,
-            'total_pembayaran' => $total_pembayaran,
             'id_reseller' => $id_reseller,
             'status_bayar' => "belum_bayar"
         ];
