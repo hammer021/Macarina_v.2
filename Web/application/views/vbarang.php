@@ -51,11 +51,11 @@
 								<tr>
 									<th>Nama Barang</th>
 									<th>Harga</th>
-									<th>Stok</th>
+                  <th>Stok</th>
+									<th>Berat(gr)</th>
 									<th>Gambar</th>
                   <th>Kemasan</th>
                   <th>Varian</th>
-                  <th>Deskripsi</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -65,11 +65,14 @@
 										<td width="150">
 											<?php echo $produk->nama_barang ?>
 										</td>
-										<td>
-											<?php echo $produk->harga ?>
+										<td width="150">
+											Rp. <?php echo $produk->harga ?>
 										</td>
 										<td>
 											<?php echo $produk->stok ?>
+										</td>
+										<td>
+											<?php echo $produk->weight?> gr
 										</td>
                     <td>
                     <?php echo "<img src='./theme-assets/images/barang/".$produk->gambar_brg."'  width='100px' height='100px'/>" ?>
@@ -80,9 +83,6 @@
 										</td>
                     <td>
 											<?php echo $produk->varian ?>
-										</td>
-                    <td>
-											<?php echo $produk->deskripsi ?>
 										</td>
                     
 										<td>
@@ -129,9 +129,11 @@
                 <label name="nama_barang">Nama Barang</label>
                 <input type="text" name="nama_barang" class="form-control">
                 <label name="harga">Harga</label>
-                <input type="text" name="harga" class="form-control">
+                <input type="number" name="harga" class="form-control">
                 <label name="stok">Stok</label>
-                <input type="text" name="stok" class="form-control">
+                <input type="number" name="stok" class="form-control">
+                <label name="stok">Berat (gr)</label>
+                <input type="number" name="weight" class="form-control">
                 <label name="gambar">Gambar</label>
                 <input type="file" name="gambar" class="form-control">
                 <label name="deskripsi">Deskripsi</label>

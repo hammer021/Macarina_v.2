@@ -73,7 +73,14 @@
                                 <?php echo form_error('stok') ?>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label for="name">Berat (gr)</label>
+                            <input class="form-control <?php echo form_error('berat') ? 'is-invalid':'' ?>"
+                             name="weight" placeholder="Berat..." value="<?php echo $barang->weight ?>"></input>
+                            <div class="invalid-feedback">
+                                <?php echo form_error('berat') ?>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="name">Gambar</label>
                             <?php echo "<img src='./theme-assets/images/barang/".$barang->gambar_brg."' width='100px' height='100px'/>"?>
