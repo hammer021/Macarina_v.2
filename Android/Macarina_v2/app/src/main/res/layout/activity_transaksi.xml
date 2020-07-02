@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityTransaksi">
+
+    <TextView
+        android:id="@+id/txtco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comicsansms"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:background="@color/background1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txttgltransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal"
+                android:fontFamily="@font/comicsansms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtgrandtotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grandtotal"
+                android:inputType="number"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/comicsansms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txttgltransaksi" />
+
+            <TextView
+                android:id="@+id/banke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transfer pada Rekening berikut :"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/comicsansms"
+                android:textColor="@color/background1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtgrandtotal" />
+
+            <TextView
+                android:id="@+id/rekeninge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20008492814 - Macarindo"
+                android:fontFamily="@font/comicsansms"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banke" />
+
+            <Spinner
+                android:id="@+id/provinsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rekeninge"/>
+
+            <Spinner
+                android:id="@+id/kota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/provinsi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Pembayaran : "
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/cost"
+                app:layout_constraintTop_toBottomOf="@+id/kota" />
+
+            <TextView
+                android:id="@+id/cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="---"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/kota" />
+
+            <Button
+                android:id="@+id/btnbayar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selesai"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_button1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cost" />
+
+            <TextView
+                android:id="@+id/idress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="0sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnbayar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kota" />
+
+            <TextView
+                android:id="@+id/costingan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="0sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnbayar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kota" />
+
+            <TextView
+                android:id="@+id/totpeman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="0sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnbayar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kota" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
