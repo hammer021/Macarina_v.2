@@ -91,6 +91,9 @@
 										</td>
                     
 										<td>
+                    <a href="<?php echo site_url('Transaksi/tampil/'.$trans->kd_transaksi) ?>"
+                      class="btn btn-small">
+                      <i class="fas fa-edit"></i> Detail</a>
                     	<a onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$trans->nama_reseller;?> ?');" 
                        href="<?php echo site_url('Transaksi/delete/'.$trans->kd_transaksi); ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                        
