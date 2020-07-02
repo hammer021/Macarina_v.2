@@ -27,7 +27,22 @@ class Trans extends REST_Controller {
             ], REST_Controller::HTTP_OK);
         }
     }
-
+    public function berat_get()
+    {
+        $id = $this->get('id_reseller');
+        if ($id === null || $id === ''){
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Masukkan Email Anda'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }else{
+            $riwayat = $this->a->getBerat($id);
+            $this->response([
+                'status' => TRUE,
+                'data' => $riwayat
+            ], REST_Controller::HTTP_OK);
+        }
+    }
 
     public function index_post()
     {

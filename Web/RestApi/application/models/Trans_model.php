@@ -12,16 +12,23 @@ class Trans_model extends CI_Model {
     {
         return $this->db->insert($tabel, $arr);
     }
-    
+    public function getBerat($id = null)
+    {
+         $this->db->select('SUM(barang.weight) AS berat');
+         $this->db->from('barang');
+         $this->db->join('detail_transaksi','detail_transaksi.kd_barang = barang.kd_barang');
+         $this->db->join('reseller','detail_transaksi.id_reseller=reseller.id_reseller');
+         $this->db->where('detail_transaksi.id_reseller',$id);
+         $this->db->where('detail_transaksi.status','Added to cart');
+         $query = $this->db->get()->row_array();
+        return $query;
+    }
     public function getDataGrandTotal($id)
     {
         $this->db->select('SUM(detail_transaksi.subtotal) AS total');
         $this->db->from('detail_transaksi');
         $this->db->where('detail_transaksi.id_reseller',$id);
         $this->db->where('detail_transaksi.status','Added to cart');
-        // $query = "SELECT SUM(detail_transaksi.subtotal) AS total FROM detail_transaksi 
-        //  WHERE detail_transaksi.id_reseller = '$id' 
-        //  AND detail_transaksi.status = 'Added to cart'";
         $query = $this->db->get()->row_array();
         return $query;
     }
