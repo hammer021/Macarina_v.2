@@ -19,7 +19,7 @@
     <input type="text" placeholder="Enter Nomor HP" name="no-hp" required>
     </br>
     <label for="psw"><b>Password</b></label></br>
-    <input type="password" placeholder="Enter Password"  name="psw" required>
+    <input type="password" placeholder="Enter Password"  name="password" required>
     </br>
     <label for="psw-repeat"><b>Repeat Password</b></label></br>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
