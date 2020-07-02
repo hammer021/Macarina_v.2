@@ -64,6 +64,8 @@ class Trans extends REST_Controller {
     {
         
         $id_reseller = $this->input->post('id_reseller');
+        $cost = $this->input->post('cost');
+        $total_pembayaran = $this->input->post('total_pembayaran');
         //$alkirim = $this->input->post('kd_al_kirim');
        // $bank = $this->input->post('id_bank');
         $kd_transaksi = $this->a->buat_kode();
@@ -74,6 +76,8 @@ class Trans extends REST_Controller {
             'kd_transaksi' => $kd_transaksi,
             'tgl_transaksi' => date('Y-m-d'),
             'grand_total' => $a,
+            'cost' => $cost,
+            'total_pembayaran' => $total_pembayaran,
             'id_reseller' => $id_reseller,
             'status_bayar' => "belum_bayar"
         ];
