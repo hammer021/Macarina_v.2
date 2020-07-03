@@ -133,7 +133,7 @@ class Trans extends REST_Controller {
             $config = uniqid().'.jpeg';
             $path = '../uploads/reseller/bukti_bayar/'.$config;
 
-            $transaksi = $this->a->getDataTransbelum($kd);
+            $transaksi = $this->a->getTrans($kd);
             $detTrans = $this->b->getDataDetTransPending($kd);
 
             
