@@ -96,10 +96,9 @@ class Trans extends REST_Controller {
     public function trans_post()
     {
         if ($this->post('kd_transaksi')) {
-            $id = $this->post('kd_transaksi');
+            $kd_tr = $this->input->post('kd_transaksi');
 
-            $detailRiwayat = $this->a->getTrans($id);
-
+            $detailRiwayat = $this->a->getTrans($kd_tr);
             if ($detailRiwayat) {
                 $this->response([
                     'status' => TRUE,
@@ -108,17 +107,33 @@ class Trans extends REST_Controller {
             } else {
                 $this->response([
                     'status' => FALSE,
-                    'message' => 'id_surat tidak ditemukan'
-                ], REST_Controller::HTTP_NOT_FOUND);
+                    'message' => 'id_surat tidak ditemukan'.$kd_tr
+                ], REST_Controller::HTTP_OK);
             }
         } else {
             $this->response([
                 'status' => FALSE,
                 'message' => 'id_surat tidak ditemukan'
-            ], REST_Controller::HTTP_NOT_FOUND);
+            ], REST_Controller::HTTP_OK);
         }
     }
-    
+
+    public function trans_get()
+    {
+        $kd_tr = $this->get('kd_transaksi');
+        if ($kd_tr === null || $kd_tr === ''){
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Masukkan kode Transaksi Anda'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }else{
+            $riwayat = $this->a->getTrans($kd_tr);
+            $this->response([
+                'status' => TRUE,
+                'data' => $riwayat
+            ], REST_Controller::HTTP_OK);
+        }
+    }
     public function index_post()
     {
         
@@ -150,7 +165,8 @@ class Trans extends REST_Controller {
             ];
             $this->response($response, 200);
     }
-    public function bayar_put()
+
+    public function bayartrans_put()
     {
         if ($this->put('kd_transaksi'))
         {
