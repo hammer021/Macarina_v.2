@@ -92,7 +92,22 @@ class Trans extends REST_Controller {
             ], REST_Controller::HTTP_OK);
         }
     }
-
+    public function trans_get()
+    {
+        $id = $this->get('kd_transaksi');
+        if ($id === null || $id === ''){
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Masukkan kode Transaksi Anda'
+            ], REST_Controller::HTTP_NOT_FOUND);
+        }else{
+            $riwayat = $this->a->getTrans($id);
+            $this->response([
+                'status' => TRUE,
+                'data' => $riwayat
+            ], REST_Controller::HTTP_OK);
+        }
+    }
     public function index_post()
     {
         
