@@ -58,39 +58,35 @@ class RegistrasiReseller extends REST_Controller{
 
     private function _sendEmail($token, $email, $type)
     {
-        $config = [
-            'protocol'      => 'smtp',
-            'smtp_host'     => 'smtp.gmail.com',
-            'smtp_user'     => 'macarinashake@gmail.com',
-            'smtp_pass'     => 'macarinaadmin',
-            'smtp_port'     => 465,
-            'mailtype'      => 'html',
-            'charset'       => 'utf-8',
-            'smtp_crypto'   => 'ssl',
-            'crlf'          => "\r\n",
-            'newline'       => "\r\n"
-        ];
+        $url = 'https://optimaukm.com/api/auth/apikirimemail';
+        $message = 'Klik link berikut untuk melakukan aktivasi akun anda <a href="' . base_url("RestApi/api/RegistrasiReseller/verify") . '?email=' . $email . '&token=' . $token . '">AKTIVASI AKUN</a>';
 
-        $this->load->library('email', $config);
-        $this->email->initialize($config);
-
-        $this->email->from('macarinashake@gmail.com', 'MACARINA');
-        $this->email->to($email);
-
-        if ($type == 'verify') {
-            $message = 'Klik link berikut untuk melakukan aktivasi akun anda <a href="' . base_url("RestApi/api/RegistrasiReseller/verify") . '?email=' . $email . '&token=' . $token . '">AKTIVASI AKUN</a>';
-
-            $this->email->subject('Verifikasi Akun MACARINA');
-            $this->email->message($message);
-        }
-
-        if ($this->email->send()) {
-            return true;
-        } else {
-            echo $this->email->print_debugger();
-            die;
-        }
+        $fields = array();
+            $fields = array(
+                "pesan" => $message,
+                "subjek" => 'Verifikasi Akun MACARINA',
+                "emailtujuan" => $email,
+                "email" => 'macarinashake@gmail.com',
+                "passmail" => 'macarinaadmin',
+                "host" => 'smtp.gmail.com',
+                "port" => '465'
+            );
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+            $result = curl_exec($ch);
+            if ($result === FALSE) {
+                die('Curl failed: ' . curl_error($ch));
+            }
+            curl_close($ch);
+            return $result;
     }
+
+    
 
     public function verify_get(){
         $email = $this->get('email');
