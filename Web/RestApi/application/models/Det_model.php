@@ -15,7 +15,17 @@ class Det_model extends CI_Model
         $income = $this->db->get()->result_array();
         return $income;
     }
-    
+    public function getDataDetTransPending($kd = null)
+    {
+        $this->db->select('detail_transaksi.*, reseller.nama_reseller, barang.nama_barang, barang.harga');
+        $this->db->from('detail_transaksi');
+        $this->db->join('reseller', 'detail_transaksi.id_reseller = reseller.id_reseller');
+        $this->db->join('barang', 'detail_transaksi.kd_barang = barang.kd_barang');
+        $this->db->where('detail_transaksi.status', 'Pending');
+        $this->db->where('detail_transaksi.kd_transaksi', $kd);
+        $income = $this->db->get()->result_array();
+        return $income;
+    }
     public function insert($tabel, $arr)
     {
         $cek = $this->db->insert($tabel, $arr);

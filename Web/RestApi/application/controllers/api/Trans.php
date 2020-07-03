@@ -9,6 +9,7 @@ class Trans extends REST_Controller {
         parent::__construct();
         // Load Akun Model
         $this->load->model('Trans_model', 'a');
+        $this->load->model('Det_model', 'b');
     } 
 
     public function index_get()
@@ -122,6 +123,74 @@ class Trans extends REST_Controller {
                 'pesan' => 'Data berhasil ditambahkan di Cart',
             ];
             $this->response($response, 200);
+    }
+    public function bayar_put()
+    {
+        if ($this->put('kd_transaksi'))
+        {
+            $kd = $this->put('kd_transaksi');
+
+            $config = uniqid().'.jpeg';
+            $path = '../uploads/reseller/bukti_bayar/'.$config;
+
+            $transaksi = $this->a->getDataTransbelum($kd);
+            $detTrans = $this->b->getDataDetTransPending($kd);
+
+            
+            if($transaksi && $detTrans) {
+                if($this->put('bukti_bayar')) {
+                    $bukti_bayar = $this->put('bukti_bayar');
+
+                    $data = array(
+                        'bukti_bayar' => $config,
+                        'status_bayar' => "sudah_bayar"
+                        
+                    );
+                    $data2 = array(
+                            'status'=> 'Selesai'
+                    );
+
+                        if ($this->db->update('transaksi', $data, ['kd_transaksi' => $kd]) && 
+                        $this->db->update('detail_transaksi', $data2, ['kd_transaksi' => $kd]) ) {
+                            file_put_contents($path, base64_decode($bukti_bayar));
+                            // jika berhasil
+                            $this->set_response([
+                                'status' => true,
+                                'message' => 'Berhasil '
+                            ], 200);
+                        } else {
+                            // jika gagal
+                            $this->set_response([
+                                'status' => false,
+                                'message' => 'Gagal'
+                            ], 401);
+                        }
+
+                    } else {
+                        
+                            // jika gagal
+                            $this->set_response([
+                                'status' => false,
+                                'message' => 'Gagal Mengupdate Profil'
+                            ], 401);
+                        
+                    }
+                    
+                } else {
+                    // jika data pengguna tidak ada
+                    $this->set_response([
+                        'status' => false,
+                        'message' => 'User could not be found'
+                    ], 404);
+                }
+
+        } else {
+            // jika tidak ada parameter id
+            $this->set_response([
+                'status' => false,
+                'message' => 'User could not be found'
+            ], 404);
+        }
     }
 
 }
