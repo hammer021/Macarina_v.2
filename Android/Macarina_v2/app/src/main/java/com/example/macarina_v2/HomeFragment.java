@@ -25,8 +25,10 @@ import java.util.List;
 public class HomeFragment extends Fragment {
     CarouselView carouselView;
     int[] sampleImage = {
-            R.drawable.person_1,
-            R.drawable.person_2
+            R.drawable.slideshownya,
+            R.drawable.slideshownyaa,
+            R.drawable.slideshownyaaa,
+            R.drawable.slideshownyaaaa
     };
 
     View view, view2;

@@ -123,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                             Intent intent3 = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent3);
-                            Toast.makeText(RegisterActivity.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Registrasi Berhasil, silahkan Aktivasi email anda!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
