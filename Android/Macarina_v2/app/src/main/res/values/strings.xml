@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Macarina_v.2</string>
+    <string name="app_name2">Macarina_v.2</string>
+
+    <string name="tentang">
+       Macarina adalah Produk Olahan Tepung dengan Bentuk Macaroni elbow, yang digoreng kering, menambah kerenyahan tekstur di setiap gigitan.
+        Macarina Shake merupakan produk makanan ringan dengan dua Varian rasa yang berbeda.
+
+    </string>
+    <string name="visi">
+        Menjadi pusat industri makanan ringan di Indonesia, dan mampu membawa nama besar Indonesia pada persaingan pasar
+        Internasional serta penyedia camilan yang inovatif, memiliki standar mutu terbaik dan peduli terhadap kesehatan.
+    </string>
+    <string name="misi">
+        1. Menambah pelanggan dengan edukasi pasar yang berkesinambungan
+     </string>
+    <string name="misi1">
+        2. Membuka lapangan pekerjaan bagi orang yang kreatif dan berkompeten
+     </string>
+    <string name="misi2">
+        3. Terus berinovasi menciptakan produk yang aman, sehat dengan standar mutu terbaik
+     </string>
+    <string name="misi3">
+        4. Selalu menjaga kualitas produk dengan bahan baku yang bersertifikasi dan mengontrol proses produksi sesuai SOP
+    </string>
+    <string name="title_activity_maps">Map</string>
+</resources>
